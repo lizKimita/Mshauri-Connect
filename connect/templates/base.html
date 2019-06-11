@@ -1,0 +1,63 @@
+{% load bootstrap3 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title> Mshauri Connect </title>
+    {% endif %}
+
+    {% block styles %}
+    <link href="https://fonts.googleapis.com/css?family=Cookie|Courgette|Covered+By+Your+Grace|Kalam|Kaushan+Script|Pacifico|Playball|Satisfy|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Kalam|Kaushan+Script|Lobster|Lobster+Two|Pacifico|Permanent+Marker|Satisfy&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://weddingstorieskenya.com/wp-content/uploads/2018/10/logo-2-e1540489991521.png">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Cookie|Courgette|Gochi+Hand|Great+Vibes|Kaushan+Script|Marck+Script|Merienda|Pacifico|Satisfy|Yellowtail&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% endblock %}
+
+</head>
+
+<body>
+    {% include "navbar.html" %}
+   
+
+    {% if messages%}
+
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">
+            {{message}}
+        </div>
+        {%endfor%}
+
+    {% endif %}
+    
+    {% block content %}
+    
+    {%endblock%}
+    <br>
+
+    {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+    <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+    {% endblock %}
+
+
+</body>
+
+</html>
