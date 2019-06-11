@@ -6,8 +6,16 @@ h1, h2, h3, h4, h5, h6{
   font-family: 'Prata', sans-serif;
 }
 
+.bg-gray{
+  background-color: #bdb7ab;
+}
 .color{
-  background-color: #ff8300;
-  height: 200px;
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  color: #ff8300;
+}
 
+.fa-ribbon{
+  color: #ff8300;
 }
