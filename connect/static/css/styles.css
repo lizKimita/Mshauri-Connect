@@ -1,0 +1,13 @@
+body{
+  font-family: 'PT Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Prata', sans-serif;
+}
+
+.color{
+  background-color: #ff8300;
+  height: 200px;
+
+}
