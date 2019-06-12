@@ -4,6 +4,7 @@ body{
 
 h1, h2, h3, h4, h5, h6{
   font-family: 'Prata', sans-serif;
+
 }
 
 .bg-gray{
@@ -11,11 +12,30 @@ h1, h2, h3, h4, h5, h6{
 }
 .color{
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   right: 60px;
   color: #ff8300;
 }
 
 .fa-ribbon{
   color: #ff8300;
+}
+
+.about{
+  height: 450px;
+  background-color: #bdb7ab;
+}
+
+.btn-outline-orange{
+  border: 1px solid #ff8300;
+  background-color: #bdb7ab;
+}
+
+.btn-outline-orange:hover{
+  background: #ff8300;
+}
+
+.footer{
+  background-color: #ff8300;
+
 }
