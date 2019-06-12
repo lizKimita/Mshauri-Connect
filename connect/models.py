@@ -38,7 +38,7 @@ class Profile(models.Model):
     user_location = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.username
+        return self.user_location
 
 class Comment(models.Model):
     user_comment = models.ForeignKey(User)
@@ -46,4 +46,4 @@ class Comment(models.Model):
     comment_id = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.user_comment
+        return self.comment
