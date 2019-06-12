@@ -10,6 +10,12 @@ def home(request):
     return render(request,'index.html')
 
 
+def hoods(request):
+
+    foundations = Foundation.objects.all()
+
+    return render(request, 'foundation.html', {"foundations": foundations})
+
 class FoundationList(APIView):
     def get(self,request,format=None):
         all_foundations = Foundation.objects.all()
