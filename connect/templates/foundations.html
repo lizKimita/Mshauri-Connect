@@ -1,13 +1,18 @@
-{% extends 'base.html' %}
-{% block content %}
-{{ block.super}}
-{% load bootstrap3 %}
-<br>
-<br>
-<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<div class="c" style="padding-top: 24px">
+{%extends 'base.html'%} {% load bootstrap3 %} {% block content %} {{block.super}}
 <div class="container-fluid">
-  <header>
-    <font color="white"  font size="6" class="text-center" style="font-weight:bold">{{foundation.foundation_name}}</font>
-    <font color="white" font size="5"class="text-center"><small>{{foundation.location}}</small></font>
-  </header>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="card mb-3">
+                <div>
+                    <img class="img-responsive" src="{{foundation.image.url}}" alt="Card image cap" width="100%;" height="400px;">
+                </div>
+                <div class="card-body">
+                    <h5>
+                        <strong>{{foundation.foundation_name}}</strong>
+                    </h5>
+                    <p>{{foundation.location}}</p>
+                    <p class="card-text">{{foundation.}}</p>
+                </div>
+            </div>
+        </div>

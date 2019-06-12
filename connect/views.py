@@ -10,7 +10,7 @@ def home(request):
     return render(request,'index.html')
 
 
-def hoods(request):
+def foundation(request):
 
     foundations = Foundation.objects.all()
 
