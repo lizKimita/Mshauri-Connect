@@ -74,15 +74,13 @@ PASSWORD_REDIRECT_URL = "/"
 
 INSTALLED_APPS = [
     'connect',
-    'bootstrap3',
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'connect',
-    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -120,14 +118,6 @@ WSGI_APPLICATION = 'mshauri.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mshauri',
-        'USER': 'antavio',
-        'PASSWORD':'antavio',
-    }
-}
 
 
 # Password validation
