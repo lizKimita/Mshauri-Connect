@@ -73,6 +73,7 @@ PASSWORD_REDIRECT_URL = "/"
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'connect',
     'bootstrap4',
     'django.contrib.admin',
@@ -107,6 +108,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
