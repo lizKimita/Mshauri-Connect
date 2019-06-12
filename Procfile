@@ -1,0 +1,1 @@
+web: gunicorn mshauri.wsgi --log-file -
