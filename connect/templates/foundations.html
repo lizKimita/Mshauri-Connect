@@ -1,7 +1,7 @@
 {%extends 'base.html'%} {% load bootstrap3 %} {% block content %} {{block.super}}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2"></div>
+        {% for foundation in foundations %}
         <div class="col-md-8">
             <div class="card mb-3">
                 <div>
@@ -12,7 +12,12 @@
                         <strong>{{foundation.foundation_name}}</strong>
                     </h5>
                     <p>{{foundation.location}}</p>
-                    <p class="card-text">{{foundation.}}</p>
+                    <p class="card-text">{{foundation.contact}}</p>
+                    <p>{{foundation.website_link}}</p>
+                    <p>{{foundation.description}}</p>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+{%endblock%}
