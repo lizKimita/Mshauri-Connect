@@ -6,7 +6,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .bg-gray{
-  background-color: #d3d3d3;
+  background-color: #ffffe0;
 }
 
 .connects{
@@ -32,7 +32,12 @@ h1,h2,h3,h4,h5,h6{
 .btn-center{
   display: flex;
   justify-content: center;
-  border: 2px solid white;
   color: white;
-  
+
+}
+
+.btn-outline-success{
+  color: black;
+  border:2px solid #ffffe0;
+  background-color: #ffffe0;
 }
