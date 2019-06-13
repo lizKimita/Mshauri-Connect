@@ -27,7 +27,7 @@ class Forums(models.Model):
     forum_post = models.TextField()
     post_date = models.DateField(auto_now_add=True)
     post_user = models.ForeignKey(User,blank=True)
-    post_id=models.IntegerField(default=0)
+ 
 
     def __str__(self):
         return self.forum_title
