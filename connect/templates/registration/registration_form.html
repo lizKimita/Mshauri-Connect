@@ -1,0 +1,45 @@
+{%extends "registration/base.html"%}
+{%load static%}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container-fluid" style="padding-top: 10ch">
+  <div class="well" style="padding-top: 1ch">
+        <h1 class="headinglogin">Mshauri Connect</h1>
+        <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="imglogin" >
+          <img src="" alt="" style="height:50ex">
+        </div>
+      </div>
+      <div class="col-md-6">
+      {% if form.errors %}
+        <p> Password or Username is incorrect </p>
+      {% endif %}
+      <div class="panel panel-default">
+        <div class="panel-body">
+            <h3 class="" style="text-align:center; font-size:300%; text-decoration: underline">Register</h3>
+          <form  action="/accounts/register/" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form layout="inline"%}
+            <div class="form-group">
+              <input type="submit" class="btn btn-outline-default" value="Login">
+            </div>
+          </div>
+        </div>
+          <div class="panel panel-default">
+            <div class="panel-body">
+            <small class="muted">
+                Already have an account?<a style="font-size:15px;" href="/accounts/login"> Log in</a>
+            </small>
+            <input type="hidden" name="next" value="{{next}}">
+          </div>
+          </form>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

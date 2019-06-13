@@ -1,0 +1,41 @@
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+{% block content %}
+
+<div class="container-fluid" style="padding-top: 10ch">
+  <div class="well" style="padding-top: 1ch">
+      <h1 class="headinglogin">Mshauri Connect</h1>
+      <hr>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="imglogin" >
+                  <img src="" alt="" style="height:50ex">
+              </div>
+          </div>
+       <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+            <h3 class="headingstyles" style="text-align:center; font-size:300%; text-decoration: underline">Login</h3>
+              <form  action="/accounts/login/" method="post">
+                {% csrf_token %}
+                {% bootstrap_form form%}
+                <div class="form-group">
+                  <a href="{%url 'home'%}"><input type="submit" class="btn btn-outline-default" value="Login"></a>
+                </div>
+              </div>
+            </div>
+              <div class="panel panel-default">
+                <div class="panel-body">
+                <small class="muted">
+                    Don't have an account?<a style="font-size:15px;" href="/accounts/register"> Sign Up Here</a>
+                </small>
+                <input type="hidden" name="next" value="{{next}}">
+              </div>
+              </form>
+            </div>
+       </div>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

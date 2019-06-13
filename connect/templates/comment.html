@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+{%for forum in post%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h1 style="font-size: 5ex;text-decoration: underline">Question <i class="far fa-question-circle"></i></h1>
+            <div>
+                <p class="heading">{{forum.forum_title}}</p>
+                <p >{{forum.forum_post}}</p>
+                <p style="float:right">By {{forum.post_user}}</p>
+                <p> <strong>{{forum.post_date}}</strong></p>
+            </div>
+            <hr>
+            <br>
+            <h1 class="heading" style="font-size: 5ex;">Offer a Solution</h1>
+            {%if user.is_authenticated%}
+            {%for forum in post%}
+            <form class="" action="/solution/{{forum.id}}/" method="post">
+                {%csrf_token%}
+                {% bootstrap_form form%}
+                <button class="btn btn-outline-default" type="submit" name="button">Add a Solution</button>
+            </form>
+            {%endfor%}
+            {%else%}
+            <a href="/accounts/login/"><button class="btn btn-outline-default" type="submit" name="button">Sign in To Contribute</button></a>
+            {%endif%}
+
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+            <p class="headingstyles" style="font-size: 5ex;text-decoration: underline">Solutions Offered <i class="far fa-comments"></i></p>
+            <hr>
+            {%if comments%}
+            {%for solution in comments%}
+            <div style="padding:1%">
+                <div class="card">
+                    <div style="margin:3%">
+                    <br>
+                    <p> {{solution.comment}}</p>
+                    <hr>
+                    <!-- <p style="float:right">{{solution.date}}</p> -->
+                    <p>By:{{solution.user_comment}}</p>                
+                </div>
+            </div>
+            </div>
+            {%endfor%}
+            {%else%}
+            <p class="alert alert-info">Be the 1st to offer a Solution</p>
+            {%endif%}
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}

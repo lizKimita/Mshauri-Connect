@@ -27,9 +27,18 @@ class Forums(models.Model):
     forum_post = models.TextField()
     post_date = models.DateField(auto_now_add=True)
     post_user = models.ForeignKey(User,blank=True)
+ 
 
     def __str__(self):
         return self.forum_title
+
+    @classmethod
+    def get_posts(cls):
+        posts = Forums.objects.all()
+        return posts
+
+    class Meta:
+        ordering = ['-id']
 
 class Profile(models.Model):
     username = models.ForeignKey(User,blank=True)
@@ -38,7 +47,7 @@ class Profile(models.Model):
     user_location = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.username
+        return self.user_location
 
 class Comment(models.Model):
     user_comment = models.ForeignKey(User)
@@ -46,4 +55,4 @@ class Comment(models.Model):
     comment_id = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.user_comment
+        return self.comment
