@@ -1,7 +1,7 @@
 {%extends 'base.html'%} {% load bootstrap4 %} {% block content %} {{block.super}}
 <div class="container-fluid">
     <div class="row">
-        {% for foundation in foundation %}
+        {% for foundation in foundations %}
         <div class="col-md-8">
             <div class="card mb-3">
                 <div>
@@ -9,17 +9,18 @@
                 </div>
                 <div class="card-body">
                     <h5>
-                        <strong>{{foundation.foundation_name}}</strong>
+                        <strong>{{foundation.name}}</strong>
                     </h5>
                     <p>{{foundation.location}}</p>
-                    <p class="card-text">{{foundation.contact}}</p>
-                    <p>{{foundation.website_link}}</p>
+                    <p>{{foundation.contact}}</p>
+                    <a href="{{foundation.website_link}}" class="card-text">
+                            <buttton class="btn btn-outline-primary">Visit Foundation</button>
+                        </a>
                     <p>{{foundation.description}}</p>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
-
 </div>
 {%endblock%}
