@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container" id="search">
+
+  <div class="row">
+    {% if foundation %}
+    <h2>Found {{ foundation }} of searched term {{search_term}}</h2>
+    {% else %}
+    <h2> Found 0 foundation for the search term {{search_term}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+    {% if foundation in foundation %}
+    {% for foundation in foundation %}
+
+    <div class="col-md-6">
+      <div class="card">
+        <h1>{{foundation.name}}</h1>
+        <img src="{{foundation.image.url}}" class="image-responsive" style="height:300px;width:600px" data-toggle="tooltip">
+      </div>
+    </div>
+</div>
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}
