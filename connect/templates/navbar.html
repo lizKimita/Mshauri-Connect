@@ -28,15 +28,26 @@
         </li>
   
         <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+        {% if user.is_authenticated %}
+        <li class="dropdown">
+                <a class="nav-link" href="" data-toggle="dropdown" role="button"><img src="https://image.flaticon.com/icons/png/128/118/118781.png" alt="" style="width:30px;height:30px;"></i></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a style="font-size:15px;" href="{%url 'NewProfile'%}">Profile</a>
+            </li>
+            <a style="font-size:15px;" href="/edit_profile">Change Status</a>
+            <li>
+              <a style="font-size:15px;" href="/logout">Logout</a>
+            </li>
+          </ul>
         </li>
+      
+      {% else %}
+      <li>
+        <a style="font-size:15px;color: white" class='btn btn-outline-default' href="/accounts/login" >REGISTER/LOGIN</a>
+      </li>
+
+      {% endif %}
   
       </ul>
       <!-- Links -->
