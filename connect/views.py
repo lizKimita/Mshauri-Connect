@@ -14,7 +14,7 @@ def foundation(request):
 
     foundations = Foundation.objects.all()
 
-    return render(request, 'foundation.html', {"foundations": foundations})
+    return render(request, 'foundations.html', {"foundations": foundations})
 
 class FoundationList(APIView):
     def get(self,request,format=None):
