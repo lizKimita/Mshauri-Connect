@@ -36,6 +36,9 @@ class Forums(models.Model):
         posts = Forums.objects.all()
         return posts
 
+    class Meta:
+        ordering = ['-id']
+
 class Profile(models.Model):
     username = models.ForeignKey(User,blank=True)
     tel_no = models.CharField(max_length=20)
