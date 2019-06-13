@@ -10,6 +10,7 @@ urlpatterns=[
     url(r'^api/forums/$', views.ForumsList.as_view()),
     url(r'^api/profile/$', views.ProfileList.as_view()),
     url(r'^api/comments/$', views.CommentList.as_view()),
+    url(r'^forums/',views.forums, name ='forums'),
 
 ]
 

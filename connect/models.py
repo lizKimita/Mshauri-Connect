@@ -31,6 +31,11 @@ class Forums(models.Model):
     def __str__(self):
         return self.forum_title
 
+    @classmethod
+    def get_posts(cls):
+        posts = Forums.objects.all()
+        return posts
+
 class Profile(models.Model):
     username = models.ForeignKey(User,blank=True)
     tel_no = models.CharField(max_length=20)
