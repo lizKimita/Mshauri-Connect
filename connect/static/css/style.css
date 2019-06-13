@@ -11,7 +11,7 @@ body{
 
 
 }
-#border, #wrapper {
+#wrapper {
 	border-radius: 200px;
 	overflow: hidden;
 	width: 250px;
@@ -20,11 +20,7 @@ body{
 	top: 50%;
 	left: 50%;
 }
-#border {
-	box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-	border: 25px solid #eee;
-	margin: -165px 0 0 -150px;
-	z-index: 0;
+
 }
 #wrapper {
 	border: 10px solid #eee;
