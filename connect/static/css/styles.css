@@ -1,7 +1,38 @@
 body{
   font-family: 'Aleo', serif;
 }
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Rasa', serif;
+}
 
 .bg-gray{
   background-color: #d3d3d3;
+}
+
+.connects{
+  display: flex;
+  justify-content: center;
+
+}
+
+.search{
+
+  background-color: rgba(0,0,0,0.2);
+
+}
+
+.landing{
+  background-color: #fc9247;
+}
+
+.tagline{
+  font-size: large;
+}
+
+.btn-center{
+  display: flex;
+  justify-content: center;
+  border: 2px solid white;
+  color: white;
+  
 }
