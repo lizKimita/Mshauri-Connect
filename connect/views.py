@@ -6,6 +6,7 @@ from .serializer import FoundationSerializer, AwarenessSerializer, ForumsSeriali
 from .forms import NewPostForm, NewCommentsForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.http import HttpResponse, Http404
 
 
 # Create your views here.
@@ -63,8 +64,30 @@ def new_post(request):
             post.post_user = current_user
             # post.poster_id = current_user.id
             post.save()
-        return redirect('home')
+        return redirect('forums')
 
     else:
         form = NewPostForm()
-    return render(request, 'forums.html', {"form": form})
+    return render(request, 'new_post.html', {"form": form})
+
+def comment(request,id):
+    post = Forums.objects.filter(id=id)
+    current_user = request.user
+
+    if request.method=='POST':
+        form = NewCommentsForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user_comment = request.user
+            form.comment_id = id
+            form.save()
+            return redirect('comment',id)
+    else:
+        form=NewCommentsForm()
+
+    try:
+        user_solution=Comment.objects.filter(post_id=id)
+    except Exception as e:
+        raise Http404()
+   
+    return render(request, 'comment.html',{'post':post, 'current_user': current_user,  'form':form, 'comments':user_solution})
