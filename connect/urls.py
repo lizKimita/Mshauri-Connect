@@ -12,7 +12,7 @@ urlpatterns=[
     url(r'^api/comments/$', views.CommentList.as_view()),
     url(r'^forums/',views.forums, name ='forums'),
     url(r'^new/post$', views.new_post, name='new-post'),
-    url(r'^solution/(\d+)/', views.comment, name = 'solution'),
+    url(r'^solution/(\d+)/', views.comment, name = 'comment'),
 
 ]
 

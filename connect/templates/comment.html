@@ -19,7 +19,7 @@
             <h1 class="heading" style="font-size: 5ex;">Offer a Solution</h1>
             {%if user.is_authenticated%}
             {%for forum in post%}
-            <form class="" action="/comment/{{forum.id}}/" method="post">
+            <form class="" action="/solution/{{forum.id}}/" method="post">
                 {%csrf_token%}
                 {% bootstrap_form form%}
                 <button class="btn btn-outline-default" type="submit" name="button">Add a Solution</button>

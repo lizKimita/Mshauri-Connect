@@ -84,9 +84,9 @@ def comment(request,id):
             return redirect('comment',id)
     else:
         form=NewCommentsForm()
-
+    user_solution=Comment.objects.filter(comment_id=id)
     try:
-        user_solution=Comment.objects.filter(post_id=id)
+        pass
     except Exception as e:
         raise Http404()
    
