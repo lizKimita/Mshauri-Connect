@@ -15,6 +15,25 @@ def home(request):
     return render(request,'index.html')
 
 
+def foundation(request):
+
+    foundations = Foundation.objects.all()
+
+    return render(request, 'foundations.html', {"foundations": foundations})
+
+def search_results(request):
+    foundation= Foundation.objects.all()
+    if 'foundation' in request.GET and request.GET["foundation"]:
+        search_term = request.GET.get("foundation")
+        searched_foundation = (search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"foundation":foundation})
+
+    else:
+        message = "no foundation by that name"
+        return render(request,'search.html',{"message":message})    
+
 class FoundationList(APIView):
     def get(self,request,format=None):
         all_foundations = Foundation.objects.all()

@@ -24,7 +24,7 @@
           <a class="nav-link" href="{% url 'forums' %}">Forums</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="{% url 'foundation' %}">Foundations</a>
         </li>
   
         <!-- Dropdown -->
@@ -54,7 +54,7 @@
   
       <form class="form-inline">
         <div class="md-form my-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="foundation">
         </div>
       </form>
       <a style="font-size:10px;font-weight: 600" class='btn btn-default' href="{%url 'new-post'%}">SUBMIT A POST</a>
