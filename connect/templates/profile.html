@@ -4,18 +4,17 @@
     {{block.super}}
 <div class="container-fluid" style="margin-top: 12ch;">
     <div class="row">
-        {% if profile.user %}
+        {% if profile.username %}
         <div class="col-md-4">
-            <h2 class="userprofile" style="text-align:center;font-weight:bold">{{profile.user}}</h2>
-            <h4 style="text-align:center"><strong>{{profile.bio}}</strong> </h4>
-            <h5 style="text-align:center">{{profile.status}}</h5>
+            <h2 class="userprofile" style="text-align:center;font-weight:bold">{{profile.username}}</h2>
             <a class="btn btn-outline-default" style="font-weight: 600; margin-left: 20ex" href="/edit_profile"><span class="prof">Edit profile</span> </a>
             <br>
             <br>
             <p style="text-align: center; font-weight: 600">{{profile.email}}</p>
+            <p style="text-align:center">{{profile.tel_no}}</p>
         </div>
         <div class="col-md-3">
-          <img src="{{profile.profile_pic.url}}" alt="Image" class="img-responsive profilepic" >
+          
         </div> 
         <div class="col-md-4">
         </div>

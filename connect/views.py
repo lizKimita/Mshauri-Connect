@@ -10,7 +10,6 @@ from django.http import HttpResponse, Http404
 from django.core.exceptions import ObjectDoesNotExist
 
 
-
 # Create your views here.
 def home(request):
     return render(request,'index.html')
@@ -112,7 +111,7 @@ def new_profile(request):
 def edit_profile(request):
     current_user = request.user
     if request.method == 'POST':
-        user = Profile.objects.get(user=request.user)
+        user = Profile.objects.get(username=request.user)
         form = NewProfileForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
@@ -123,13 +122,13 @@ def edit_profile(request):
 
 def profile(request):
     current_user = request.user
-    posts = Posts.objects.filter(profile = current_user)
-    tips = Tips.objects.filter(user = current_user)
+    # posts = Posts.objects.filter(profile = current_user)
+    # tips = Tips.objects.filter(user = current_user)
 
     try:
-        profile = Profile.objects.get(user=current_user)
-        user = Profile.objects.get(user=current_user)
+        profile = Profile.objects.get(username=current_user)
+        user = Profile.objects.get(username=current_user)
     except ObjectDoesNotExist:
         return redirect('new_profile')
 
-    return render(request,'profile.html',{ 'profile':profile,'posts':posts,'tips':tips,'current_user':current_user})
+    return render(request,'profile.html',{ 'profile':profile,'current_user':current_user})
