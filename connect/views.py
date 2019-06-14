@@ -12,7 +12,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 def home(request):
-    return render(request,'index.html')
+    return render(request,'works.html')
 
 
 def foundation(request):
