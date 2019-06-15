@@ -92,6 +92,13 @@ class CommentList(APIView):
         serializers = CommentSerializer(all_comments,many=True)
         return Response(serializers.data)
 
+    def post(self,request,format=None):
+        serializers = CommentSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data,status=status.HTTP_201_CREATED)
+        return Response(serializers.errors,status=status.HTTP_400_BAD_REQUEST)
+
 def forums(request):
     current_user = request.user
     posts = Forums.get_posts()
@@ -167,9 +174,6 @@ def edit_profile(request):
 
 def profile(request):
     current_user = request.user
-    # posts = Posts.objects.filter(profile = current_user)
-    # tips = Tips.objects.filter(user = current_user)
-
     try:
         profile = Profile.objects.get(username=current_user)
         user = Profile.objects.get(username=current_user)
