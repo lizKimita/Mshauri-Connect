@@ -3,16 +3,37 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import Foundation, Awareness, Forums, Profile, Comment
 from .serializer import FoundationSerializer, AwarenessSerializer, ForumsSerializer, ProfileSerializer, CommentSerializer
-from .forms import NewPostForm, NewCommentsForm
+from .forms import NewPostForm, NewCommentsForm, NewProfileForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404
 from rest_framework import status
+from django.core.exceptions import ObjectDoesNotExist
+
 
 # Create your views here.
 def home(request):
-    return render(request,'index.html')
+    return render(request,'works.html')
 
+
+def foundation(request):
+
+    foundations = Foundation.objects.all()
+
+    return render(request, 'foundations.html', {"foundations": foundations})
+
+def search_results(request):
+    foundation= Foundation.objects.all()
+    if 'foundation' in request.GET and request.GET["foundation"]:
+        search_term = request.GET.get("foundation")
+        searched_foundation = (search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"foundation":foundation})
+
+    else:
+        message = "no foundation by that name"
+        return render(request,'search.html',{"message":message})    
 
 class FoundationList(APIView):
     def get(self,request,format=None):
@@ -96,3 +117,43 @@ def comment(request,id):
         raise Http404()
    
     return render(request, 'comment.html',{'post':post, 'current_user': current_user,  'form':form, 'comments':user_solution})
+
+
+def new_profile(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.username = current_user
+            profile.save()
+        return redirect('NewProfile')
+    else:
+        form = NewProfileForm()
+    return render(request, 'new_profile.html', {"form": form})
+
+
+def edit_profile(request):
+    current_user = request.user
+    if request.method == 'POST':
+        user = Profile.objects.get(username=request.user)
+        form = NewProfileForm(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+        return redirect('NewProfile')
+    else:
+        form = NewProfileForm()
+    return render(request,'edit_profile.html',{'form':form})
+
+def profile(request):
+    current_user = request.user
+    # posts = Posts.objects.filter(profile = current_user)
+    # tips = Tips.objects.filter(user = current_user)
+
+    try:
+        profile = Profile.objects.get(username=current_user)
+        user = Profile.objects.get(username=current_user)
+    except ObjectDoesNotExist:
+        return redirect('new_profile')
+
+    return render(request,'profile.html',{ 'profile':profile,'current_user':current_user})

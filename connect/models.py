@@ -13,6 +13,11 @@ class Foundation(models.Model):
     def __str__(self):
         return self.name  
 
+    @classmethod
+    def search_by_name(cls,search_term):
+        foundations = cls.objects.filter(name__icontains=search_term)
+        return foundations
+
 class Awareness(models.Model):
     article_title = models.CharField(max_length=255)
     article = models.TextField()
