@@ -7,7 +7,7 @@ from .forms import NewPostForm, NewCommentsForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404
-
+from rest_framework import status
 
 # Create your views here.
 def home(request):
@@ -19,7 +19,12 @@ class FoundationList(APIView):
         all_foundations = Foundation.objects.all()
         serializers = FoundationSerializer(all_foundations,many=True)
         return Response(serializers.data)
-
+    def post(self,request,format=None):
+        serializers = FoundationSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data,status=status.HTTP_201_CREATED)
+        return Response(serializers.errors,status=status.HTTP_400_BAD_REQUEST)
 class AwarenessList(APIView):
     def get(self,request,format=None):
         all_articles = Awareness.objects.all()
