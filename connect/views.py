@@ -40,6 +40,7 @@ class FoundationList(APIView):
         all_foundations = Foundation.objects.all()
         serializers = FoundationSerializer(all_foundations,many=True)
         return Response(serializers.data)
+        
     def post(self,request,format=None):
         serializers = FoundationSerializer(data=request.data)
         if serializers.is_valid():
@@ -52,6 +53,12 @@ class AwarenessList(APIView):
         serializers = AwarenessSerializer(all_articles,many=True)
         return Response(serializers.data)
 
+    def post(self,request,format=None):
+        serializers = AwarenessSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data,status=status.HTTP_201_CREATED)
+        return Response(serializers.errors,status=status.HTTP_400_BAD_REQUEST)
 
 class ForumsList(APIView):
     def get(self,request,format=None):
