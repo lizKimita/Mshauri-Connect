@@ -16,7 +16,9 @@ def home(request):
     return render(request,'works.html')
 
 def tests(request):
-    return render(request,'tests.html')
+    tests = Assessment.objects.all()
+
+    return render(request,'tests.html',{"tests": tests})
 
 # def assessment(request):
 #     current_user = request.user

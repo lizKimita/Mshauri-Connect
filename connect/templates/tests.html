@@ -3,38 +3,32 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container" style="padding-top:3%">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="card" style="padding-top:3%">
             {%for test in tests%}
-            <div style="padding:1%">
-                <div class="card">
-                    <div style="margin:3%">
-                    <br>
+            <div style="padding:1.5%">
                     <p class=""> {{test.question}}</p>
-                    <hr>
                         <i style="float:right" >
                         <form class="" action="" method="post">
                             {%csrf_token%}
                             <input type="hidden" name="dislike" value="{{test.id}}">
-                            <button type="submit" name="button">yes</button>
+                            <button type="submit" name="button" class="btn btn-outline-info">No</button>
                         </form></i>
                         <i><form class="" action="" method="post">
                             {%csrf_token%}
                             <input type="hidden" name="like" value="{{test.id}}">
-                            <button type="submit" name="button">No</button>
-                        </form></i>             
-                </div>
+                            <button type="submit" name="button" class="btn btn-outline-info">Yes</button>
+                        </form></i>           
+            
             </div>
-            </div>
-      
+            <hr>
             {%endfor%}
-
+        </div>
         </div>
         <div class="col-md-1"></div>
-        <div class="col-md-5">
-
-        </div>
     </div>
 </div>
 {% endblock %}

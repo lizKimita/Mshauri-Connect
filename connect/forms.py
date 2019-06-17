@@ -17,6 +17,11 @@ class NewProfileForm(forms.ModelForm):
         model = Profile
         exclude = ['username']
 
+class NewAssessment(forms.ModelForm):
+    class Meta:
+        model = Assessment
+        exclude = ['user','yesscore','noscore','date']
+
 class NewYesAssessmentForm(forms.ModelForm):
     class Meta:
         model = Assessment
