@@ -17,7 +17,6 @@ def home(request):
 
 
 def foundation(request):
-
     foundations = Foundation.objects.all()
 
     return render(request, 'foundations.html', {"foundations": foundations})
@@ -174,10 +173,12 @@ def edit_profile(request):
 
 def profile(request):
     current_user = request.user
+    posts = Forums.objects.filter(post_user = current_user)
+
     try:
         profile = Profile.objects.get(username=current_user)
         user = Profile.objects.get(username=current_user)
     except ObjectDoesNotExist:
         return redirect('new_profile')
 
-    return render(request,'profile.html',{ 'profile':profile,'current_user':current_user})
+    return render(request,'profile.html',{ 'profile':profile,'current_user':current_user,'posts':posts})
