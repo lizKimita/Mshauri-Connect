@@ -1,27 +1,25 @@
 {%extends 'base.html'%} {% load bootstrap4 %} {% block content %} {{block.super}}
-<div class="container-fluid">
+<br><br><div class="container">
     <div class="row">
-        {% for foundation in foundations %}
-        <div class="col-md-8">
-            <div class="card mb-3">
-                <div>
-                    <img class="img-responsive" src="{{foundation.image.url}}" alt="Card image cap" width="100%;"
-                        height="400px;">
-                </div>
-                <div class="card-body">
-                    <h5>
-                        <strong>{{foundation.name}}</strong>
-                    </h5>
-                    <p>{{foundation.location}}</p>
-                    <p>{{foundation.contact}}</p>
-                    <p>{{foundation.description}}</p>
-                    <a href="{{foundation.website_link}}" class="card-text">
-                        <buttton class="btn btn-outline-primary float-right">Visit Foundation</button>
-                    </a>
 
+        {% for foundation in foundations %}
+
+          <div class="col-md-4">
+            <div class="card-deck">
+              <div class="card">
+                <div class="serve"><img class="card-img-top rounded-circle" src="static/media/speak.png" alt="Card image cap" height="70px" width="70px"></div>
+                <div class="card-body">
+                    <h5 class="card-title text-center"><b>{{foundation.name}}</b></h5>
+                  <p class="card-text text-center">{{location.description}}</p>
+                  <p class="text-center"><a href="#" class="more">Share</a></p>
                 </div>
-            </div>
-        </div>
+              </div>
+
+
+          </div>
+          </div>
+
+
         {% endfor %}
     </div>
 </div>
