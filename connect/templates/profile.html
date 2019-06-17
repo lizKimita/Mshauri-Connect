@@ -5,18 +5,17 @@
 <div class="container-fluid" style="margin-top: 12ch;">
     <div class="row">
         {% if profile.username %}
-        <div class="col-md-4">
-            <h2 class="userprofile" style="text-align:center;font-weight:bold">{{profile.username}}</h2>
-            <a class="btn btn-outline-default" style="font-weight: 600; margin-left: 20ex" href="/edit_profile"><span class="prof">Edit profile</span> </a>
-            <br>
-            <br>
-            <p style="text-align: center; font-weight: 600">{{profile.email}}</p>
-            <p style="text-align:center">{{profile.tel_no}}</p>
-        </div>
         <div class="col-md-3">
           
         </div> 
-        <div class="col-md-4">
+        <div class="col-md-6">
+            <h2 class="userprofile" style="text-align:center;font-weight:bold">{{profile.username}}</h2>
+            <p><a class="btn btn-outline-default" href="/edit_profile"><span class="prof">Edit profile</span> </a></p> 
+            <p style="text-align: center; font-weight: 600">{{profile.email}}</p>
+            <p style="text-align:center">{{profile.tel_no}}</p>
+        </div>
+
+        <div class="col-md-3">
         </div>
         {% else %}
         </p>No profile description</p>
@@ -69,13 +68,8 @@
                         {% endif %}
                     
                 </div>
-
         </div>
-
+    </div>         
     </div>
-
-          
-    </div>
-
 
 {% endblock %}

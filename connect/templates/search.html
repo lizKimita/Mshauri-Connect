@@ -1,5 +1,12 @@
 {%extends 'base.html'%} {% block content %}
-<div class="container" id="search">
+<div class="container" style="margin-top:5%">
+    <div class="row">
+        {% if foundations%}
+          <h2>Found {{ foundations|length }} foundation matching "{{message}}"</h2>
+        {% else %}
+          <h2>Found no Foundations Matching "{{message}}"</h2>
+        {% endif %}
+      </div>
   <div class="row">
     {% if foundations %} {% for foundation in foundations %}
 
