@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Foundation, Awareness, Forums, Profile, Comment
+from .models import Foundation, Awareness, Forums, Profile, Comment, Assessment
 from .serializer import FoundationSerializer, AwarenessSerializer, ForumsSerializer, ProfileSerializer, CommentSerializer
-from .forms import NewPostForm, NewCommentsForm, NewProfileForm
+from .forms import NewPostForm, NewCommentsForm, NewProfileForm, NewYesAssessmentForm, NewNoAssessmentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404
@@ -15,8 +15,34 @@ from django.core.exceptions import ObjectDoesNotExist
 def home(request):
     return render(request,'works.html')
 
-def assessment(request):
-    return render(request,'assessment.html')
+def tests(request):
+    return render(request,'tests.html')
+
+# def assessment(request):
+#     current_user = request.user
+#     try:
+#         pass
+#     except Exception as e:
+#         raise  Http404()
+#     yesscore = request.POST.get("yes","")
+#     noscore = request.POST.get("no","")
+
+#     if request.method=='POST':
+#         form = NewYesAssessmentForm(request.POST)
+#         danger = request.POST.get("yes","")
+
+#         if danger:
+#             yes=int(danger)
+#             if form.is_valid:
+#                 yesscore = form.save(commit=False)
+#                 # single = Tips.objects.filter(id = vote)
+#                 count=0
+#                 # for i in single:
+#                 count+=i.upvote
+#                 total_upvotes=count+1
+#                 Tips.objects.filter(id=vote).update(upvote=total_upvotes)
+#                 return redirect('tips')
+#     return render(request,'assessment.html')
 
 def foundation(request):
     foundations = Foundation.objects.all()

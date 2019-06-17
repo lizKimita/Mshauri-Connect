@@ -64,5 +64,7 @@ class Comment(models.Model):
 
 class Assessment(models.Model):
     user = models.ForeignKey(User)
-    score = models.IntegerField(default=0)
+    question = models.CharField(max_length=250)
+    yesscore = models.IntegerField(default=0)
+    noscore = models.IntegerField(default=0)
     date = models.DateField(auto_now_add=True)
