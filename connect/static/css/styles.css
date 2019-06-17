@@ -79,3 +79,18 @@ h1,h2,h3,h4,h5,h6{
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
+.more{
+  text-transform: uppercase;
+  color: #F3F5F7;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #fc9247;
+  font-weight: 700;
+  font-size: 14px;
+}
+.more:hover{
+  text-decoration: none;
+  color: #F3F5F7;
+}
