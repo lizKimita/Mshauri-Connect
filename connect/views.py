@@ -15,6 +15,8 @@ from django.core.exceptions import ObjectDoesNotExist
 def home(request):
     return render(request,'works.html')
 
+def assessment(request):
+    return render(request,'assessment.html')
 
 def foundation(request):
     foundations = Foundation.objects.all()
