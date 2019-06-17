@@ -9,8 +9,6 @@ body{
 	min-height: 600px;
 }
 
-
-}
 #wrapper {
 	border-radius: 200px;
 	overflow: hidden;
@@ -21,7 +19,6 @@ body{
 	left: 50%;
 }
 
-}
 #wrapper {
 	border: 10px solid #eee;
 	margin: -150px 0 0 -135px;
