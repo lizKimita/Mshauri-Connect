@@ -26,7 +26,7 @@ def search_results(request):
     foundation= Foundation.objects.all()
     if 'name' in request.GET and request.GET["name"]:
         search_term = request.GET.get("name")
-        searched_foundation = Foundation.objects.filter(name=search_term)
+        searched_foundation = Foundation.search_by_name(search_term)
         message = f"{search_term}"
 
         return render(request, 'search.html',{"message":message,"foundations": searched_foundation})
