@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   font-family: 'Aleo', serif;
 }
@@ -93,4 +97,26 @@ h1,h2,h3,h4,h5,h6{
 .more:hover{
   text-decoration: none;
   color: #F3F5F7;
+}
+
+.footer{
+  background-color: #6c757d;
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+
+ul li{
+  list-style-type: none;
+  color: black;
+  text-decoration: none;
+}
+
+li:hover{
+
+  text-decoration-color: #F3F5F7;
+}
+
+.bullet{
+  color: #fff;
+  font-size: large;
 }
