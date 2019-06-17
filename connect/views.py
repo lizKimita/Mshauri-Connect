@@ -18,12 +18,12 @@ def foundation(request):
 
 def search_results(request):
     foundation= Foundation.objects.all()
-    if 'foundation' in request.GET and request.GET["foundation"]:
-        search_term = request.GET.get("foundation")
-        searched_foundation = (search_term)
+    if 'name' in request.GET and request.GET["name"]:
+        search_term = request.GET.get("name")
+        searched_foundation = Foundation.objects.filter(name=search_term)
         message = f"{search_term}"
 
-        return render(request, 'search.html',{"foundation":foundation})
+        return render(request, 'search.html',{"message":message,"foundations": searched_foundation})
 
     else:
         message = "no foundation by that name"

@@ -16,7 +16,7 @@ class Foundation(models.Model):
     @classmethod
     def search_by_name(cls,search_term):
         foundations = cls.objects.filter(name__icontains=search_term)
-        return foundations
+        return foundation
 
 class Awareness(models.Model):
     article_title = models.CharField(max_length=255)
