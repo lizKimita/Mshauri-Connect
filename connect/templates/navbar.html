@@ -25,11 +25,7 @@
         <a class="nav-link" href="#">Donate</a>
       </li>
   </ul>
-  <form class="form-inline my-2 my-lg-0 ml-auto" action="{% url 'search' %}" role="search">
-    <input class="form-control" type="search" placeholder="Search for a foundation" aria-label="Search" name="name">
-    <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
-  </form>
-
+  
   <!-- right -->
   <ul class=" navbar-nav mr-5">
     <li class="nav-item mr-sm-2">
@@ -49,7 +45,7 @@
           </li>
         </ul>
       </li>
-    
+
     {% else %}
     <li>
       <a style="font-size:15px;color: white" class='btn btn-outline-default' href="/accounts/login" >REGISTER/LOGIN</a>
