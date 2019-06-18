@@ -17,6 +17,31 @@ def home(request):
 
 def tests(request):
     tests = Assessment.objects.all()
+    current_user = request.user
+    try:
+        pass
+    except Exception as e:
+        raise  Http404()
+    yesscore = request.POST.get("like","")
+    noscore = request.POST.get("dislike","") 
+
+    if request.method=='POST':
+        form=NewYesAssessmentForm(request.POST)
+        yess = request.POST.get("bad","")
+        if yess:
+            bad=int(yess)
+            if form.is_valid:
+                yesans=form.save(commit=False)
+                single = Assessment.objects.filter(id = yess)
+                count=0
+                for i in single:
+                    count+=i.upvote
+                total_upvotes=count+1
+                Tips.objects.filter(id=yess).update(upvote=total_upvotes)
+                return redirect('tips')
+
+    else:
+        forms=NewYesAssessmentForm()
 
     return render(request,'tests.html',{"tests": tests})
 
