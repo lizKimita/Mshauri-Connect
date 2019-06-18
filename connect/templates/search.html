@@ -1,29 +1,44 @@
-{%extends 'base.html'%}
-{% block content %}
-<div class="container" id="search">
-
+{%extends 'base.html'%} {% block content %}
+<div class="container" style="margin-top:5%">
+    <div class="row">
+        {% if foundations%}
+          <h2>Found {{ foundations|length }} foundation matching "{{message}}"</h2>
+        {% else %}
+          <h2>Found no Foundations Matching "{{message}}"</h2>
+        {% endif %}
+      </div>
   <div class="row">
-    {% if foundation %}
-    <h2>Found {{ foundation }} of searched term {{search_term}}</h2>
-    {% else %}
-    <h2> Found 0 foundation for the search term {{search_term}}</h2>
-    {% endif %}
-
-  </div>
-
-  <div class="row">
-
-    {% if foundation in foundation %}
-    {% for foundation in foundation %}
+    {% if foundations %} {% for foundation in foundations %}
 
     <div class="col-md-6">
+      <!-- Card -->
       <div class="card">
-        <h1>{{foundation.name}}</h1>
-        <img src="{{foundation.image.url}}" class="image-responsive" style="height:300px;width:600px" data-toggle="tooltip">
+
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="{{foundation.image.url}}" alt="Card image cap">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title">{{foundation.name}}</h4>
+          <!-- Text -->
+          <p class="card-text">{{foundation.description}}</p>
+          <!-- Button -->
+          <a href="{{foundation.website_link}}" class="card-text">
+            <buttton class="btn btn-outline-primary">Visit Foundation</button>
+        </div>
+
       </div>
+      <!-- Card -->
     </div>
+    {% endfor %} {% endif %}
+  </div>
 </div>
-</div>
-{% endfor %}
-{% endif %}
+
 {% endblock %}

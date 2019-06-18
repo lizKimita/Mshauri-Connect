@@ -1,4 +1,4 @@
-from .models import Foundation, Awareness, Forums, Profile, Comment
+from .models import Foundation, Awareness, Forums, Profile, Comment,Assessment
 from django import forms
 
 
@@ -16,3 +16,19 @@ class NewProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         exclude = ['username']
+
+class NewAssessment(forms.ModelForm):
+    class Meta:
+        model = Assessment
+        exclude = ['user','yesscore','noscore','date']
+
+class NewYesAssessmentForm(forms.ModelForm):
+    class Meta:
+        model = Assessment
+        exclude = ['user','yesscore','noscore','date']
+
+class NewNoAssessmentForm(forms.ModelForm):
+    class Meta:
+        model = Assessment
+        exclude = ['user','yesscore','noscore','date']
+

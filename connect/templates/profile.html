@@ -5,18 +5,17 @@
 <div class="container-fluid" style="margin-top: 12ch;">
     <div class="row">
         {% if profile.username %}
-        <div class="col-md-4">
-            <h2 class="userprofile" style="text-align:center;font-weight:bold">{{profile.username}}</h2>
-            <a class="btn btn-outline-default" style="font-weight: 600; margin-left: 20ex" href="/edit_profile"><span class="prof">Edit profile</span> </a>
-            <br>
-            <br>
-            <p style="text-align: center; font-weight: 600">{{profile.email}}</p>
-            <p style="text-align:center">{{profile.tel_no}}</p>
-        </div>
         <div class="col-md-3">
           
         </div> 
-        <div class="col-md-4">
+        <div class="col-md-6">
+            <h2 class="userprofile" style="text-align:center;font-weight:bold">{{profile.username}}</h2>
+            <p><a class="btn btn-outline-default" href="/edit_profile"><span class="prof">Edit profile</span> </a></p> 
+            <p style="text-align: center; font-weight: 600">{{profile.email}}</p>
+            <p style="text-align:center">{{profile.tel_no}}</p>
+        </div>
+
+        <div class="col-md-3">
         </div>
         {% else %}
         </p>No profile description</p>
@@ -28,54 +27,28 @@
 <div class="container" style="margin-top:10px" >
     <div class="row">
         <div class="card-body">
-            <div class="well col-md-5">
+            <div class="well col-md-12">
                 <h1 class="headingstyles" style="font-size:6ex; text-decoration: underline">Your Posts</h1>
                 {% if posts %}
                     {% for post in posts %}
-                    <div style="padding:1%">
+                    <div class="col-md-4" style="padding:1%">
                     <div class="card">
                         <div style="margin:4%">
-                            <p class="heading">{{post.title}}</p>
+                            <p class="heading">{{post.forum_title}}</p>
                             <hr>
-                            <p>{{post.description}}</p>
-                            <p style="float:right">{{post.date}}</p>
+                            <p>{{post.forum_post}}</p>
+                            <p style="float:right">{{post.post_date}}</p>
                         </div>
                     </div>
                     </div>
+               
                     {% endfor%}
                 {% else %}
                     <p class="profmessage">You haven't posted anything yet!</p>
                 {% endif %}
                 </div>
-                <div class="col-md-1">
-                </div>
-                <div class="well col-md-6">
-                    <h1 class="headingstyles" style="font-size:6ex ; text-decoration: underline">Offered Tips/Advice</h1>
-                    {% if tips %}
-                        {% for tip in tips %}
-                            <div style="padding:1%">
-                                <div class="card">
-                                    <div style="margin:4%">
-                                        <p class="heading">{{tip.title}}</p>
-                                        <hr>
-                                        <p>{{tip.tips}}</p>
-                                        <p style="float:right">{{tip.date}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor%}
-                        {% else %}
-                            <p class="">You haven't offered any tips yet!</p>
-                        {% endif %}
-                    
-                </div>
-
         </div>
-
+    </div>         
     </div>
-
-          
-    </div>
-
 
 {% endblock %}

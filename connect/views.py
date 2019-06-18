@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Foundation, Awareness, Forums, Profile, Comment
+from .models import Foundation, Awareness, Forums, Profile, Comment, Assessment
 from .serializer import FoundationSerializer, AwarenessSerializer, ForumsSerializer, ProfileSerializer, CommentSerializer
-from .forms import NewPostForm, NewCommentsForm, NewProfileForm
+from .forms import NewPostForm, NewCommentsForm, NewProfileForm, NewYesAssessmentForm, NewNoAssessmentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404
@@ -15,21 +15,50 @@ from django.core.exceptions import ObjectDoesNotExist
 def home(request):
     return render(request,'works.html')
 
+def tests(request):
+    tests = Assessment.objects.all()
+
+    return render(request,'tests.html',{"tests": tests})
+
+# def assessment(request):
+#     current_user = request.user
+#     try:
+#         pass
+#     except Exception as e:
+#         raise  Http404()
+#     yesscore = request.POST.get("yes","")
+#     noscore = request.POST.get("no","")
+
+#     if request.method=='POST':
+#         form = NewYesAssessmentForm(request.POST)
+#         danger = request.POST.get("yes","")
+
+#         if danger:
+#             yes=int(danger)
+#             if form.is_valid:
+#                 yesscore = form.save(commit=False)
+#                 # single = Tips.objects.filter(id = vote)
+#                 count=0
+#                 # for i in single:
+#                 count+=i.upvote
+#                 total_upvotes=count+1
+#                 Tips.objects.filter(id=vote).update(upvote=total_upvotes)
+#                 return redirect('tips')
+#     return render(request,'assessment.html')
 
 def foundation(request):
-
     foundations = Foundation.objects.all()
 
     return render(request, 'foundations.html', {"foundations": foundations})
 
 def search_results(request):
     foundation= Foundation.objects.all()
-    if 'foundation' in request.GET and request.GET["foundation"]:
-        search_term = request.GET.get("foundation")
-        searched_foundation = (search_term)
+    if 'name' in request.GET and request.GET["name"]:
+        search_term = request.GET.get("name")
+        searched_foundation = Foundation.search_by_name(search_term)
         message = f"{search_term}"
 
-        return render(request, 'search.html',{"foundation":foundation})
+        return render(request, 'search.html',{"message":message,"foundations": searched_foundation})
 
     else:
         message = "no foundation by that name"
@@ -174,10 +203,12 @@ def edit_profile(request):
 
 def profile(request):
     current_user = request.user
+    posts = Forums.objects.filter(post_user = current_user)
+
     try:
         profile = Profile.objects.get(username=current_user)
         user = Profile.objects.get(username=current_user)
     except ObjectDoesNotExist:
         return redirect('new_profile')
 
-    return render(request,'profile.html',{ 'profile':profile,'current_user':current_user})
+    return render(request,'profile.html',{ 'profile':profile,'current_user':current_user,'posts':posts})

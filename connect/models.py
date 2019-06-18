@@ -61,3 +61,10 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment
+
+class Assessment(models.Model):
+    user = models.ForeignKey(User)
+    question = models.CharField(max_length=250)
+    yesscore = models.IntegerField(default=0)
+    noscore = models.IntegerField(default=0)
+    date = models.DateField(auto_now_add=True)
