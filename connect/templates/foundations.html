@@ -1,10 +1,58 @@
 {%extends 'base.html'%} {% load bootstrap4 %} {% block content %} {{block.super}}
 
-<div class="container-fluid">
-  <br><br><div class="container centre">
+<div class="container-fluid height ">
+  <br><br><div class="container">
+
+
     <div class="row ">
 
-      <div class="col-md-12 ">
+<article class="wwdc zing">
+  <span class="spin">
+    <!-- Large Circles -->
+    <div class="large circle one"></div>
+    <div class="large circle two"></div>
+    <div class="large circle three"></div>
+    <div class="large circle four"></div>
+    <div class="large circle five"></div>
+    <div class="large circle six"></div>
+    <div class="large circle seven"></div>
+    <div class="large circle eight"></div>
+  </span>
+  <span class="pulse">
+    <!-- Small Shapes -->
+    <div class="small circle one"></div>
+    <div class="small squircle two"></div>
+    <div class="small circle three"></div>
+    <div class="small squircle four"></div>
+    <div class="small circle five"></div>
+    <div class="small squircle six"></div>
+    <div class="small circle seven"></div>
+    <div class="small squircle eight"></div>
+  </span>
+    <!-- Squircles -->
+    <span class="spin-reverse">
+      <div class="large squircle one"></div>
+    </span>
+    <div class="large squircle two">
+      <div class="content">
+        <div class="tuvitu">
+          <h1 class="text-white text-center"><b>Enlist as a foundation!</b></h1>
+          <h4 class="text-white text-center">Join the Revolution against Gender-Based Violence today.</h4>
+          <h5 class=" text-muted text-white text-center">at +254714828944</h5>
+        </div>
+
+
+    </div>
+  </div>
+</article>
+
+    </div>
+
+    <!-- <div class="row ">
+
+      <div class="col-md-12 search">
+        hello world what looks better on you
+
         <form class="form-inline my-2 my-lg-0 ml-auto" action="{% url 'search' %}" role="search">
           <input class="form-control" type="search" placeholder="Search for a foundation" aria-label="Search" name="name">
           <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
@@ -12,10 +60,21 @@
 
       </div>
 
+    </div> -->
+  </div>
+
+</div><br>
+<div class="container-fluid">
+  <div class="container">
+
+    <div class="col-md-12">
+      <h1 class="text-center"><b>Our Partners</b></h1><hr>
+      <p class="text-center">We would never have been able to help you enough without the help of these profound organisations. Delve in to a range of organisations from all over East Africa that will hold your hand through your entire journey against Gender-Based Violence</p>
     </div>
+
   </div>
 </div>
-<br><br><div class="container">
+<br><br><div class="container ">
     <div class="row">
 
         {% for foundation in foundations %}
@@ -47,4 +106,5 @@
         {% endfor %}
     </div>
 </div>
+{%include 'footer.html'%}
 {%endblock%}
