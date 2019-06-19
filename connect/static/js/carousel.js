@@ -23,10 +23,10 @@ var i = 0,
 
 // Typerwrite text content. Use a pipe to indicate the start of the second line "|".
 var textArray = [
-  "We know how many times you've thought of writing",
+  "We know how much you've thought to write",
   "And how hard it's been for you to come clean",
-  "We know how many times you've erased your story",
-  "Because you thought no one would be keen",
+  "We know you've frequently erased your story",
+  "For fear no one would be keen",
   "But here's a forum for you",
   "Where you can finally be heard,",
   "Where you can finally be seen!"

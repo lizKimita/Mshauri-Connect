@@ -6,14 +6,43 @@
 <!-- here comes the magic -->
 <div class="container-fluid forums">
   <div class="container py-5">
-    <div class="output" id="output">
-      <h1 class="cursor"></h1>
-      <p></p>
+    <div class="row">
+      <div class="col-md-2">
+        <img src="https://www.netflixanimation.com/static/images/Writing.png" alt="" height="100px" width="100px">
+      </div>
+      <div class="col-md-8">
+        <div class="output" id="output">
+          <h1 class="cursor"></h1>
+          <p></p><br><br><br>
+          <a href="#"><h3 class="text-center btn btn-outline-success tell">Tell you story now</h3></a>
+          <br><br><br><img src="https://cdn2.vectorstock.com/i/1000x1000/23/01/feather-quill-vector-452301.jpg" alt="" class="rounded-circle" width="100px" height="100px">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <img src="https://image.freepik.com/free-vector/illustration-pen-icon_53876-5590.jpg" alt="" class="rounded-circle" width="100px" height="100px">
+      </div>
     </div>
+
   </div>
 </div>
 <!-- here ends the magic -->
+<br><br>
 <div class="container-fluid">
+  <div class="container">
+    <h1><b>Top Stories</b></h1><hr>
+    <div class="row top_stories">
+      {%for post in posts|slice:":10"%}
+        <div class="col-md-4">
+            <div class="card bearer">
+              <br><br>
+              <h5 class="title">{{post.forum_title}}</h5>
+            </div>
+        </div>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+<!-- <div class="container-fluid">
   <div class="">
     {% for post in posts%}
         <div class="col-md-4" style="padding:1%">
@@ -40,7 +69,7 @@
         </div>
     {% endfor %}
   </div>
-</div>
+</div> -->
 <script src="js/carousel.js"></script>
 
 {% endblock %}

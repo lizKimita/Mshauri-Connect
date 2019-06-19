@@ -44,6 +44,7 @@ h1,h2,h3,h4,h5,h6{
   color: black;
   border:2px solid #ffffe0;
   background-color: #ffffe0;
+
 }
 
 #wrapper{
@@ -334,13 +335,14 @@ $transparency: 0.75;
 /* forums  */
 
 .forums {
-  background-color:#333;
+  background-color:#fc9247;
+  height: 75%;
 }
 
 .output {
   text-align:center;
   font-family: 'Rasa', sans-serif;
-  color:white;
+  color:black;
   h1 {
     font-size:30px;
   }
@@ -379,4 +381,28 @@ p.cursor::after {
   100% {
     opacity:0;
   }
+}
+
+.tell{
+  font-size: 24px;
+}
+
+.title{
+  font-size: 45px;
+  height: 150px;
+  max-height: 150px;
+  color: #fc9247;
+  font-family: 'Calligraffitti', sans-serif;
+  text-align: center;
+}
+
+.top_stories{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow-x: auto;
+}
+.bearer{
+  display: flex;
+  justify-content: center;
 }
