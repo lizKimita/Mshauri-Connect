@@ -19,6 +19,8 @@ urlpatterns=[
     url(r'^new_profile/$',views.new_profile,name = 'new_profile'),
     url(r'^edit_profile/$',views.edit_profile,name = 'edit_profile'),
     url(r'^tests/',views.tests, name ='tests'),
+    url(r'^chat/', views.specialist, name='specialist'),
+    url(r'^(?P<room_name>[^/]+)/$', views.room, name='room'),
 ]
 
 if settings.DEBUG:
