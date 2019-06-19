@@ -9,11 +9,22 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, Http404
 from rest_framework import status
 from django.core.exceptions import ObjectDoesNotExist
-
+from django.utils.safestring import mark_safe
+import json
 
 # Create your views here.
 def home(request):
     return render(request,'works.html')
+
+def specialist(request):
+    return render(request, 'chat/index.html', {})
+
+@login_required
+def room(request, room_name):
+    return render(request, 'chat/room.html', {
+        'room_name_json': mark_safe(json.dumps(room_name)),
+        'username': mark_safe(json.dumps(request.user.username)),
+    })
 
 def tests(request):
     tests = Assessment.objects.all()
