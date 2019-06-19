@@ -69,10 +69,10 @@ ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = "/"
 PASSWORD_REDIRECT_URL = "/"
-
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'rest_framework',
     'connect',
     'bootstrap4',
@@ -115,8 +115,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mshauri.wsgi.application'
-
-
+ASGI_APPLICATION = "mshauri.routing.application"
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
