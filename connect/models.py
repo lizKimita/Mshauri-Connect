@@ -68,3 +68,13 @@ class Assessment(models.Model):
     yesscore = models.IntegerField(default=0)
     noscore = models.IntegerField(default=0)
     date = models.DateField(auto_now_add=True)
+
+class Message(models.Model):
+    author = models.ForeignKey(User,on_delete=models.CASCADE)
+    content = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        self.author
+    def last_10_messages(self):
+        return Message.objects.order_by('timestamp').all()[:10]
