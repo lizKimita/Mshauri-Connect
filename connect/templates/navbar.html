@@ -30,9 +30,6 @@
   <ul class=" navbar-nav mr-5">
     <li class="nav-item mr-sm-2">
       {% if user.is_authenticated %}
-      <li>
-        <a style="font-size:10px;font-weight: 600" class='btn btn-default' href="{%url 'new-post'%}">SUBMIT A POST</a>
-      </li>
       <li class="dropdown">
           <a class="nav-link" href="" data-toggle="dropdown" role="button"><img src="https://image.flaticon.com/icons/png/128/118/118781.png" alt="" style="width:30px;height:30px;"></i></a>
         <ul class="dropdown-menu" role="menu">
