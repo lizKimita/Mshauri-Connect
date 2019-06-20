@@ -13,12 +13,13 @@ urlpatterns=[
     url(r'^api/profile/$', views.ProfileList.as_view()),
     url(r'^api/comments/$', views.CommentList.as_view()),
     url(r'^forums/',views.forums, name ='forums'),
+    url(r'^awareness/',views.awareness, name ='awareness'),
     url(r'^new/post$', views.new_post, name='new-post'),
     url(r'^solution/(\d+)/', views.comment, name = 'comment'),
     url(r'^profile/$',views.profile,name = 'NewProfile'),
     url(r'^new_profile/$',views.new_profile,name = 'new_profile'),
     url(r'^edit_profile/$',views.edit_profile,name = 'edit_profile'),
-
+    url(r'^tests/',views.tests, name ='tests'),
 ]
 
 if settings.DEBUG:

@@ -11,7 +11,7 @@ class Foundation(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.name  
+        return self.name
 
     @classmethod
     def search_by_name(cls,search_term):
@@ -32,7 +32,7 @@ class Forums(models.Model):
     forum_post = models.TextField()
     post_date = models.DateField(auto_now_add=True)
     post_user = models.ForeignKey(User,blank=True)
- 
+    post_cover = models.ImageField(upload_to='cover_pics',blank=True)
 
     def __str__(self):
         return self.forum_title
@@ -61,3 +61,10 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment
+
+class Assessment(models.Model):
+    user = models.ForeignKey(User)
+    question = models.CharField(max_length=250)
+    yesscore = models.IntegerField(default=0)
+    noscore = models.IntegerField(default=0)
+    date = models.DateField(auto_now_add=True)

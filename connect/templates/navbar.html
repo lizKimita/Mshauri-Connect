@@ -12,8 +12,8 @@
     <a class="nav-link" href="/">Home
       <span class="sr-only">(current)</span>
     </a>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">About</a>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'awareness' %}">Awareness</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'forums' %}">Forums</a>
@@ -25,31 +25,24 @@
         <a class="nav-link" href="#">Donate</a>
       </li>
   </ul>
-  <form class="form-inline my-2 my-lg-0 ml-auto" action="{% url 'search' %}" role="search">
-    <input class="form-control" type="search" placeholder="Search for a foundation" aria-label="Search" name="name">
-    <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
-  </form>
-
+  
   <!-- right -->
   <ul class=" navbar-nav mr-5">
     <li class="nav-item mr-sm-2">
       {% if user.is_authenticated %}
-      <li>
-        <a style="font-size:10px;font-weight: 600" class='btn btn-default' href="{%url 'new-post'%}">SUBMIT A POST</a>
-      </li>
       <li class="dropdown">
           <a class="nav-link" href="" data-toggle="dropdown" role="button"><img src="https://image.flaticon.com/icons/png/128/118/118781.png" alt="" style="width:30px;height:30px;"></i></a>
         <ul class="dropdown-menu" role="menu">
           <li>
             <a style="font-size:15px;" href="{%url 'NewProfile'%}">Profile</a>
           </li>
-          <a style="font-size:15px;" href="/edit_profile">Change Status</a>
+          <a style="font-size:15px;" href="/edit_profile">Edit Profile</a>
           <li>
             <a style="font-size:15px;" href="/logout">Logout</a>
           </li>
         </ul>
       </li>
-    
+
     {% else %}
     <li>
       <a style="font-size:15px;color: white" class='btn btn-outline-default' href="/accounts/login" >REGISTER/LOGIN</a>

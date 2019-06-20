@@ -1,28 +1,109 @@
 {%extends 'base.html'%} {% load bootstrap4 %} {% block content %} {{block.super}}
-<div class="container-fluid">
-    <div class="row">
-        {% for foundation in foundations %}
-        <div class="col-md-8">
-            <div class="card mb-3">
-                <div>
-                    <img class="img-responsive" src="{{foundation.image.url}}" alt="Card image cap" width="100%;"
-                        height="400px;">
-                </div>
-                <div class="card-body">
-                    <h5>
-                        <strong>{{foundation.name}}</strong>
-                    </h5>
-                    <p>{{foundation.location}}</p>
-                    <p>{{foundation.contact}}</p>
-                    <p>{{foundation.description}}</p>
-                    <a href="{{foundation.website_link}}" class="card-text">
-                        <buttton class="btn btn-outline-primary float-right">Visit Foundation</button>
-                    </a>
 
-                </div>
-            </div>
+<div class="container-fluid height ">
+  <br><br><div class="container">
+
+
+    <div class="row ">
+
+<article class="wwdc zing">
+  <span class="spin">
+    <!-- Large Circles -->
+    <div class="large circle one"></div>
+    <div class="large circle two"></div>
+    <div class="large circle three"></div>
+    <div class="large circle four"></div>
+    <div class="large circle five"></div>
+    <div class="large circle six"></div>
+    <div class="large circle seven"></div>
+    <div class="large circle eight"></div>
+  </span>
+  <span class="pulse">
+    <!-- Small Shapes -->
+    <div class="small circle one"></div>
+    <div class="small squircle two"></div>
+    <div class="small circle three"></div>
+    <div class="small squircle four"></div>
+    <div class="small circle five"></div>
+    <div class="small squircle six"></div>
+    <div class="small circle seven"></div>
+    <div class="small squircle eight"></div>
+  </span>
+    <!-- Squircles -->
+    <span class="spin-reverse">
+      <div class="large squircle one"></div>
+    </span>
+    <div class="large squircle two">
+      <div class="content">
+        <div class="tuvitu">
+          <h1 class="text-white text-center"><b>Enlist as a foundation!</b></h1>
+          <h4 class="text-white text-center">Join the Revolution against Gender-Based Violence today.</h4>
+          <h5 class=" text-muted text-white text-center">at +254714828944</h5>
         </div>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</div><br>
+<div class="container-fluid">
+  <div class="container">
+
+    <div class="col-md-12">
+      <h1 class="text-center"><b>Our Partners</b></h1><hr>
+      <p class="text-center">We would never have been able to help you enough without the help of these profound organisations. Delve in to a range of organisations from all over East Africa that will hold your hand through your entire journey against Gender-Based Violence</p>
+    </div>
+
+  </div>
+</div>
+<br><br><div class="container ">
+
+    <div class="row" style="margin-top: 5%">
+        {% for foundation in foundations %}
+          <div class="col-md-4">
+            <div class="card-deck foundation">
+              <div class="card">
+                <div class="serve"><img class="card-img-top rounded-circle" src="{{foundation.image.url}}" alt="Card image cap" height="70px" width="70px"></div>
+                <div class="card-body">
+                    <h5 class="card-title text-center"><b>{{foundation.name}}</b></h5>
+                    <h6 class="text-muted text-center">{{foundation.location}}</h6>
+                  <p class="card-text text-center">{{foundation.description}}</p><br><br>
+                <div class="row">
+                  <div class="col-md-6">
+                    <i class="fas fa-phone"></i> : {{foundation.contact}}
+                  </div>
+                  <div class="col-md-6">
+                      <p class="text-center"><a href="#" class="more">Connect</a></p>
+                  </div>
+                </div>
+                </div>
+              </div>
+          </div>
+          </div>
         {% endfor %}
     </div>
-</div>
+  </div>
+  <div class="container-fluid maps" style="margin-top:3%; padding-top: 4%" >
+    <div class="row">
+        <div class="col-md-5" style="margin-top:12%">
+            <h2 style="text-align:center">Looking For a Specific Foundation?</h2>
+            <div style="margin-left:8%">
+                <form class="form-inline my-2 my-lg-0 ml-auto" action="{% url 'search' %}" role="search">
+                    <input class="form-control" type="search" placeholder="Search for a foundation" aria-label="Search" name="name">
+                    <button class="btn btn-outline-black btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-7">
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=16WckAUQ-0Y_KBmwbEKDhRvQ3vZpIWE8T" width="700" height="450"></iframe>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+  <br><br><br><br>
+
+
+
+{%include 'footer.html'%}
 {%endblock%}
