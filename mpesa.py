@@ -12,7 +12,7 @@ formatted_time = unformatted_time.strftime("%Y%m%d%H%M%S")
 data_to_encode = keys.business_shortcode + keys.mpesa_passkey + formatted_time
 encoded_bytes = base64.b64encode(data_to_encode.encode("utf-8"))
 encoded_string = str(encoded_bytes, "utf-8")
-print(encoded_string)
+
 
 
 #authentication
@@ -25,30 +25,34 @@ api_URL = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_c
 
 r = requests.get(api_URL, auth=HTTPBasicAuth(consumer_key, consumer_secret))
 
-print (r.json())
+
 json_response = r.json()
+sauda_token = json_response['access_token']
+print(sauda_token)
 
 
-# def lipa_na_mpesa():
-#
-#
-#     access_token = "Access-Token"
-#     api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
-#     headers = { "Authorization": "Bearer %s" % access_token }
-#     request = {
-#       "BusinessShortCode": keys.business_shortcode,
-#       "Password": encoded_string,
-#       "Timestamp": formatted_time,
-#       "TransactionType": "CustomerPayBillOnline",
-#       "Amount": "5",
-#       "PartyA": keys.phone_number,
-#       "PartyB": keys.business_shortcode,
-#       "PhoneNumber": keys.phone_number,
-#       "CallBackURL": "https://fullstackdjango.com/lipanampesa",
-#       "AccountReference": "31643",
-#       "TransactionDesc": "Donate to Mshauri"
-#     }
-#
-#     response = requests.post(api_url, json = request, headers=headers)
-#
-#     print (response.text)
+def lipa_na_mpesa():
+
+
+    access_token = sauda_token
+    api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
+    headers = { "Authorization": "Bearer %s" % access_token }
+    request = {
+      "BusinessShortCode": keys.business_shortcode,
+      "Password": encoded_string,
+      "Timestamp": formatted_time,
+      "TransactionType": "CustomerPayBillOnline",
+      "Amount": "5",
+      "PartyA": keys.phone_number,
+      "PartyB": keys.business_shortcode,
+      "PhoneNumber": keys.phone_number,
+      "CallBackURL": "https://fullstackdjango.com/lipanampesa",
+      "AccountReference": "31643",
+      "TransactionDesc": "Donate to Mshauri"
+    }
+
+    response = requests.post(api_url, json = request, headers=headers)
+
+    print (response.text)
+
+lipa_na_mpesa()
