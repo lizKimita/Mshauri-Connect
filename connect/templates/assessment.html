@@ -1,151 +1,194 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {{block.super}}
-<div class="container" style="margin-top:5%">
-    <form>
-        <label for="">1. Has the physical violence increased in severity or frequency over the past year?</label>
-            <br>
-            <input type="radio" name="Question1" value="1" required>Yes
-            <br>
-            <input type="radio" name="Question1">No
-            <br><hr>
-    
-        <label for="">2. Has he ever used a weapon against you or threatened you with a weapon?</label>
-            <br>
-            <input type="radio" name="Question2" value="1" required>Yes
-            <br>
-            <input type="radio" name="Question2">No
-            <br><hr>
+{{block.super}}
 
-        <label for="">3. Does he ever try to choke you?</label>
-            <br>
-            <input type="radio" name="Question3" value="1" required>Yes
-            <br>
-            <input type="radio" name="Question3">No
-            <br><hr>
+<div class="container" style="padding-top:3%">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <div class="card" style="padding-top:3%">
+    <form id="qboxes">
+    <div style="padding:1.8%">
+        <label for="Question1">1. Are you a victim of domestic violence?</label>
+        <br>
+        <input type="radio" name="Question1" value="1" required>Yes
+        <br>
+        <input type="radio" name="Question1" value="0">No
+        <br>
+        <hr>
 
-        <label for="">4. Does he own a gun?</label>
-            <br>
-            <input type="radio" name="Question4" value="1" required>Yes
-            <br>
-            <input type="radio" name="Question4">No
-            <br><hr>
-        
-        <label for="">5. Has he ever forced you to have sex when you did not wish to do so?</label>
-            <br>
-            <input type="radio" name="Question5" value="1" required>Yes
-            <br>
-            <input type="radio" name="Question5">No
-            <br><hr>
+        <label for="Question2">2. Has the physical violence increased in severity or frequency over the past
+            year?</label>
+        <br>
+        <input type="radio" name="Question2" value="1" required>Yes
+        <br>
+        <input type="radio" name="Question2" value="0">No
+        <br>
+        <hr>
 
-        <label for="">6. Does he use drugs? By drugs, I mean “uppers” pr amphetamines, speed, angel dust,          cocaine, “crack”, street drugs or mixtures.</label>
+        <label for="Question3">3. Has he/she ever used a weapon against you or threatened you with a weapon?</label>
+        <br>
+        <input type="radio" name="Question3" value="1" required>Yes
+        <br>
+        <input type="radio" name="Question3" value="0">No
+        <br>
+        <hr>
+
+        <label for="Question4">4. Does he/she ever try to choke you?</label>
+        <br>
+        <input type="radio" name="Question4" value="1" required>Yes
+        <br>
+        <input type="radio" name="Question4" value="0">No
+        <br>
+        <hr>
+
+        <label for="Question5">5. Does he/she own a gun?</label>
+        <br>
+        <input type="radio" name="Question5" value="1" required>Yes
+        <br>
+        <input type="radio" name="Question5" value="0">No
+        <br>
+        <hr>
+
+        <label for="Question6">6. Has he/she ever forced you to have sex when you did not wish to do so?</label>
             <br>
             <input type="radio" name="Question6" value="1" required>Yes
             <br>
-            <input type="radio" name="Question6">No
-            <br><hr>        
-            
-        <label for="">7. Does he threaten to kill you and/or do you believe he is capable of killing you?</label>
+            <input type="radio" name="Question6" value="0">No
+            <br><hr>
+
+        <label for="Question7">7. Does he/she use drugs? By drugs, I mean “uppers” pr amphetamines, speed, angel dust,cocaine, “crack”, street drugs or mixtures.</label>
             <br>
             <input type="radio" name="Question7" value="1" required>Yes
             <br>
-            <input type="radio" name="Question7">No
+            <input type="radio" name="Question7" value="0">No
             <br><hr>        
-        
-        <label for="">8. Is he drunk every day or almost every day? (In terms of quantity of alcohol.)</label>
+            
+        <label for="Question8">8. Does he/she threaten to kill you and/or do you believe he/she is capable of killing you?</label>
             <br>
             <input type="radio" name="Question8" value="1" required>Yes
             <br>
-            <input type="radio" name="Question8">No
-            <br><hr>
+            <input type="radio" name="Question8" value="0">No
+            <br><hr>        
         
-        <label for="">9. Does he control most or all of your daily activities? For instance: does he tell you who you can be friends with, when you can see your family, how much money you can use, or when you can take the car?</label>
+        <label for="Question9">9. Is he/she drunk every day or almost every day? (In terms of quantity of alcohol.)</label>
             <br>
             <input type="radio" name="Question9" value="1" required>Yes
             <br>
-            <input type="radio" name="Question9">No
+            <input type="radio" name="Question9" value="0">No
             <br><hr>
         
-        <label for="">10. Have you ever been beaten by him while you were pregnant?</label>
+        <label for="Question10">10. Does he/she control most or all of your daily activities? For instance: does he/she tell you who you can be friends with, when you can see your family, how much money you can use, or when you can take the car?</label>
             <br>
             <input type="radio" name="Question10" value="1" required>Yes
             <br>
-            <input type="radio" name="Question10">No
+            <input type="radio" name="Question10" value="0">No
             <br><hr>
+
         
-        <label for="">11. Is he violently and constantly jealous of you? (For instance, does he say “If I can’t have you, no one can.”)</label>
+        <label for="Question11">11. Is he/she violently and constantly jealous of you? (For instance, does he/she say “If I can’t have you, no one can.”)</label>
             <br>
             <input type="radio" name="Question11" value="1" required>Yes
             <br>
-            <input type="radio" name="Question11">No
+            <input type="radio" name="Question11" value="0">No
             <br><hr>
 
-        <label for="">12. Have you ever threatened or tried to commit suicide?</label>
+        <label for="Question12">12. Have you ever threatened or tried to commit suicide?</label>
             <br>
             <input type="radio" name="Question12" value="1" required>Yes
             <br>
-            <input type="radio" name="Question12">No
+            <input type="radio" name="Question12" value="0">No
             <br><hr>
 
-        <label for="">13. Has he ever threatened or tried to commit suicide?</label>
+        <label for="Question13">13. Has he/she ever threatened or tried to commit suicide?</label>
             <br>
             <input type="radio" name="Question13" value="1" required>Yes
             <br>
-            <input type="radio" name="Question13">No
+            <input type="radio" name="Question13" value="0">No
             <br><hr>
                 
-        <label for="">14. Does he threaten to harm your children?</label>
+        <label for="Question14">14. Does he/she threaten to harm your children?</label>
             <br>
             <input type="radio" name="Question14" value="1" required>Yes
             <br>
-            <input type="radio" name="Question14">No
+            <input type="radio" name="Question14" value="0">No
             <br><hr>
         
-        <label for="">15. Do you have a child that is not his?</label>
+
+        <label for="Question15">15. Is he/she unemployed?</label>
             <br>
             <input type="radio" name="Question15" value="1" required>Yes
             <br>
-            <input type="radio" name="Question15">No
+            <input type="radio" name="Question15" value="0">No
             <br><hr>
-
-        <label for="">16. Is he unemployed?</label>
+        
+        <label for="Question16">16. Have you left during the past year? </label>
             <br>
             <input type="radio" name="Question16" value="1" required>Yes
             <br>
-            <input type="radio" name="Question16">No
-            <br><hr>
-        
-        <label for="">17. Have you left him during the past year? </label>
+            <input type="radio" name="Question16" value="0">No
+            <br><hr>    
+            
+        <label for="Question17">17. Do you currently have another (different) intimate partner?</label>
             <br>
             <input type="radio" name="Question17" value="1" required>Yes
             <br>
-            <input type="radio" name="Question17">No
-            <br><hr>    
-            
-        <label for="">18. Do you currently have another (different) intimate partner?</label>
+            <input type="radio" name="Question17" value="0">No
+            <br><hr>
+
+        <label for="Question18">18. Does he/she follow or spy on you, leave threatening notes, destroy your property, or call you when you don’t want him/her to? </label>
             <br>
             <input type="radio" name="Question18" value="1" required>Yes
             <br>
-            <input type="radio" name="Question18">No
+            <input type="radio" name="Question18" value="0">No
             <br><hr>
 
-        <label for="">19. Does he follow or spy on you, leave threatening notes, destroy your property, or call you when you don’t want him to? </label>
-            <br>
-            <input type="radio" name="Question19" value="1" required>Yes
-            <br>
-            <input type="radio" name="Question19">No
-            <br><hr>
-        
-            <button type="submit" class="btn btn-outline-info" id ="assessment"> Get Assessment Results!</button>
+        <button type="submit" class="btn btn-warning" id="assessment" style="color:white" data-toggle="modal"
+            data-target="#centralModalWarning"> Get Assessment Results!</button>
 
-            <br>
-            <br>
-            <div id="marks"></div>
-            <br>
-            <div id="comment"></div>
-            <br>
-        </form>
+        <!-- Central Modal Medium Warning -->
+        <div class="modal fade" id="centralModalWarning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-warning" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="headinglead">Assessment Results!</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSllTaBT7JTRXYusTfzUkQKabD9R3qsg2b7_NsRjo7vOoRuNUY" alt="">
+                        </div>
+                        
+                        <div class="text-center">
+                            <div id="marks"></div>
+                            <br>
+                            <div id="comment"></div>
+                        </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <a type="button" class="btn btn-warning waves-effect" data-dismiss="modal" style="color:black">Close</a>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+        <!-- Central Modal Medium Warning-->
+    </div>
+    </form>
+        </div>
+    <div class="col-md-1"></div>
+        </div>
+    </div>
 </div>
 
 

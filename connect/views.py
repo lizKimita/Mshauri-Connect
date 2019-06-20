@@ -55,32 +55,11 @@ def tests(request):
         forms=NewYesAssessmentForm()
 
     return render(request,'tests.html',{"tests": tests})
+    
+def tests(request):
+    current_user = request.user
 
-# def assessment(request):
-#     current_user = request.user
-#     try:
-#         pass
-#     except Exception as e:
-#         raise  Http404()
-#     yesscore = request.POST.get("yes","")
-#     noscore = request.POST.get("no","")
-
-#     if request.method=='POST':
-#         form = NewYesAssessmentForm(request.POST)
-#         danger = request.POST.get("yes","")
-
-#         if danger:
-#             yes=int(danger)
-#             if form.is_valid:
-#                 yesscore = form.save(commit=False)
-#                 # single = Tips.objects.filter(id = vote)
-#                 count=0
-#                 # for i in single:
-#                 count+=i.upvote
-#                 total_upvotes=count+1
-#                 Tips.objects.filter(id=vote).update(upvote=total_upvotes)
-#                 return redirect('tips')
-#     return render(request,'assessment.html')
+    return render(request,'assessment.html')
 
 def foundation(request):
     foundations = Foundation.objects.all()
