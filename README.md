@@ -6,5 +6,5 @@
 * [Dickson Nyaigoti](https://github.com/deeksonparlma/)
 * [Anthony Njuguna](https://github.com/Antavio/)
 ## Description
-An application that 
-
+Mshauri-Connect is an application that provides victims of gender-based violence from all over Kenya with the opportunity to tell their stories, and even better, connect with people and organizations around who can help them.  
+##BDD
