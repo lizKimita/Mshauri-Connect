@@ -16,7 +16,7 @@
 
         <!-- Card image -->
         <div class="view overlay">
-          <img class="card-img-top" src="{{foundation.image.url}}" alt="Card image cap">
+          <div class="serve"><img class="card-img-top rounded-circle" src="{{foundation.image.url}}" alt="Card image cap" height="70px" width="70px"></div>
           <a href="#!">
             <div class="mask rgba-white-slight"></div>
           </a>
@@ -26,9 +26,9 @@
         <div class="card-body">
 
           <!-- Title -->
-          <h4 class="card-title">{{foundation.name}}</h4>
+          <h5 class="card-title text-center"><b>{{foundation.name}}</b></h5>
           <!-- Text -->
-          <p class="card-text">{{foundation.description}}</p>
+          <p class="card-text text-center">{{foundation.description}}</p><br><br>
           <!-- Button -->
           <a href="{{foundation.website_link}}" class="card-text">
             <buttton class="btn btn-outline-primary">Visit Foundation</button>
