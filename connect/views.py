@@ -66,6 +66,12 @@ def foundation(request):
 
     return render(request, 'foundations.html', {"foundations": foundations})
 
+
+def awareness(request):
+    awareness = Awareness.objects.all()
+
+    return render(request, 'awareness.html', {"awareness": awareness})
+
 def search_results(request):
     foundation= Foundation.objects.all()
     if 'name' in request.GET and request.GET["name"]:

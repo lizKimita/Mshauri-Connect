@@ -38,7 +38,7 @@ $(document).ready(function(){
   
     function grades(test) {
       if (test >= 80) {
-        $("#comment").text ("This reveals that you are in Extreme Danger! Please ensure taht you seek help!");
+        $("#comment").text ("This reveals that you are in Extreme Danger! Please ensure that you seek help!");
         // $("#reload").hide();
       } else if (test <= 50){
         $("#comment").text ("This reveals that you are in Increased Danger! You still need to be extremely careful!");
