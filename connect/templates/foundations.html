@@ -47,20 +47,7 @@
 </article>
 
     </div>
-
-    <!-- <div class="row ">
-
-      <div class="col-md-12 search">
-        hello world what looks better on you
-
-        <form class="form-inline my-2 my-lg-0 ml-auto" action="{% url 'search' %}" role="search">
-          <input class="form-control" type="search" placeholder="Search for a foundation" aria-label="Search" name="name">
-          <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
-        </form>
-
-      </div>
-
-    </div> -->
+ 
   </div>
 
 </div><br>
@@ -75,10 +62,27 @@
   </div>
 </div>
 <br><br><div class="container ">
-    <div class="row">
 
+    <!-- <div class="row ">
+
+        <div class="col-md-12 search"> -->
+    
+          <h2 style="text-align:center">Looking For a Specific Foundation?</h2>
+          <div style="margin-left:40%">
+              <form class="form-inline my-2 my-lg-0 ml-auto" action="{% url 'search' %}" role="search">
+                  <input class="form-control" type="search" placeholder="Search for a foundation" aria-label="Search" name="name">
+                  <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+                </form>
+          </div>
+
+     
+
+<!--   
+        </div>
+  
+      </div> -->
+    <div class="row" style="margin-top: 5%">
         {% for foundation in foundations %}
-
           <div class="col-md-4">
             <div class="card-deck foundation">
               <div class="card">
@@ -97,8 +101,6 @@
                 </div>
                 </div>
               </div>
-
-
           </div>
           </div>
 
