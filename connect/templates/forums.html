@@ -1,38 +1,64 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {{block.super}}
-        <div class="container-fluid">
-            <div class="well">
-                <div class="row">
-                    <div class="col-md-12">
-                        {% for post in posts%}
-                            <div class="col-md-4" style="padding:1%">
-                                <div class="card" style="height:35ex" >
-                                    <div style="margin:2%;">
-                                        <br>
-                                        <p class="heading">{{post.forum_title}}</p>
-                                        <hr>
-                                        <p>{{post.forum_post}}</p>
-                                        <p style="float:right">{{post.post_date}}</p>
-                                        <p>By:{{post.post_user}}</p>
-                                        <a class="btn btn-outline-default btn-lg" href="{% url 'comment' post.pk%}">Offer solution</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                {% autoescape on %}
-                                {{post.post| safe}}
-                                {% endautoescape %}
-                            </div>
-                            {% empty %}
-                            <div class="row">
-                                <h2 class="text-center">There is no Post yet!</h2>
-                            </div>
-                        {% endfor %}
-                    </div>   
-                </div>
-            </div>
+{{block.super}}
+
+<!-- here comes the magic -->
+<div class="container-fluid forums">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-2">
+        <img src="https://www.netflixanimation.com/static/images/Writing.png" alt="" height="100px" width="100px">
+      </div>
+      <div class="col-md-8">
+        <div class="output" id="output">
+          <h1 class="cursor"></h1>
+          <p></p><br><br><br>
+          <a href="#"><h3 class="text-center btn btn-outline-success tell">Tell your story now</h3></a>
+          <br><br><br><img alt="show" src="https://cdn2.vectorstock.com/i/1000x1000/23/01/feather-quill-vector-452301.jpg" class="rounded-circle" width="100px" height="100px">
         </div>
+      </div>
+      <div class="col-md-2">
+        <img src="https://image.freepik.com/free-vector/illustration-pen-icon_53876-5590.jpg" alt="" class="rounded-circle" width="100px" height="100px">
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- here ends the magic -->
+<br><br>
+<div class="container-fluid">
+  <div class="container">
+    <h1 class="text-center"><b>Top Stories</b></h1><hr>
+    <h5><i>From undeniably sweet partners turned monsters to notorious assailants, here are the top 3 articles from victims, and assailants that we've come across this week!</i></h5>
+    <div class="row top_stories">
+      {%for post in posts|slice:":10"%}
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img" src="https://images.pexels.com/photos/731753/pexels-photo-731753.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bologna">
+            <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+              <h2 class="card-title">{{post.forum_title}}</h2>
+              <h6 class="card-subtitle mb-2">{{post.post_date}}</h6>
+              <p class="card-text">Another one from {{post.post_user}}. </p>
+              <div class="link d-flex">
+                <a href="#" class="card-link text-warning">Read More</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+<div class="container">
+  {%for post in posts%}
+
+
+
+  {%endfor%}
+</div>
+
+<script src="js/carousel.js"></script>
 
 {% endblock %}
