@@ -125,3 +125,11 @@ li:hover{
   font-size: 200%;
   text-align: center;
 }
+#marks{
+  color: black;
+  font-size: 140%;
+}
+#comment{
+  color: black;
+}
+
