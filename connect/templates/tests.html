@@ -21,10 +21,12 @@
                         {%csrf_token%}
                         <input type="hidden" name="bad" value="{{test.id}}">
                         <button type="submit" name="button" class="btn btn-outline-info">Yes</button>
-                    </form></i>           
+                    </form></i> 
+                               
             </div>
             <hr>
             {%endfor%}
+            {{test.yesscore}}
         </div>
         </div>
         <div class="col-md-1"></div>
