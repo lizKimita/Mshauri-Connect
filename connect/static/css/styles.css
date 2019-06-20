@@ -120,3 +120,8 @@ li:hover{
   color: #fff;
   font-size: large;
 }
+
+.headinglead{
+  font-size: 200%;
+  text-align: center;
+}
