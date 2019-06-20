@@ -31,7 +31,6 @@ $(document).ready(function(){
 
   });
 
-
   //BUSINESS LOGIC(BACKEND)
     function calculateScore (ans1, ans2, ans3, ans4, ans5,ans6,ans7,ans8,ans9,ans10,ans11,ans12,ans13,ans14,ans15,ans16,ans17,ans18) {
       return (ans1+ans2+ans3+ans4+ans5+ans6+ans7+ans8+ans9+ans10+ans11+ans12+ans13+ans14+ans15+ans16+ans17+ans18)/18*100;
@@ -42,10 +41,10 @@ $(document).ready(function(){
         $("#comment").text ("This reveals that you are in Extreme Danger!");
         // $("#reload").hide();
       } else if (test <= 50){
-        $("#comment").text ("This reveals that you are in Severe Danger!");
+        $("#comment").text ("This reveals that you are in Increased Danger! You still need to be extremely careful!");
         // $("#reload").show();
       } else {
-        $("#comment").text ("This reveals that you are in Increased Danger!");
+        $("#comment").text ("This reveals that you are in Severe Danger!");
         // $("#reload").hide();
       }
     };
