@@ -37,13 +37,13 @@ $(document).ready(function(){
   
     function grades(test) {
       if (test >= 80) {
-        $("#comment").text ("Excellent Performance!Congratulations!");
+        $("#comment").text ("This reveals that you are in Extreme Danger!");
         // $("#reload").hide();
       } else if (test <= 50){
-        $("#comment").text ("Oh no! You have performed poorly, please retake the test!");
+        $("#comment").text ("This reveals that you are in Severe Danger!");
         // $("#reload").show();
       } else {
-        $("#comment").text ("Fair performance!");
+        $("#comment").text ("This reveals that you are in Increased Danger!");
         // $("#reload").hide();
       }
     };
