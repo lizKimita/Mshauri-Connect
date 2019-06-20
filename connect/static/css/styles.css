@@ -518,3 +518,8 @@ p.cursor::after {
 .maps{
   background-color: rgba(218, 206, 193, 0.986);
 }
+.repeat{
+  background-color: rgba(218, 206, 193, 0.986);
+  margin-top: 3%;
+  padding-bottom: 3%;
+}
