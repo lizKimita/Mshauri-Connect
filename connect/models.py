@@ -68,6 +68,10 @@ class Assessment(models.Model):
     yesscore = models.IntegerField(default=0)
     noscore = models.IntegerField(default=0)
     date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.question
+
 class Message(models.Model):
     author = models.ForeignKey(User,on_delete=models.CASCADE)
     content = models.TextField()

@@ -55,7 +55,7 @@ def tests(request):
         forms=NewYesAssessmentForm()
 
     return render(request,'tests.html',{"tests": tests})
-    
+
 def tests(request):
     current_user = request.user
 
@@ -145,7 +145,7 @@ class CommentList(APIView):
 
 def forums(request):
     current_user = request.user
-    posts = Forums.get_posts()
+    posts = Forums.objects.all()
     title = "mshauri-connect"
 
     return render(request,'forums.html', {"title":title, "posts":posts})
