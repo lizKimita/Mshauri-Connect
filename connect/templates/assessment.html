@@ -2,8 +2,14 @@
 
 {% block content %}
 {{block.super}}
-<div class="container" style="margin-top:5%">
+
+<div class="container" style="padding-top:3%">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <div class="card" style="padding-top:3%">
     <form id="qboxes">
+    <div style="padding:1.8%">
         <label for="Question1">1. Are you a victim of domestic violence?</label>
         <br>
         <input type="radio" name="Question1" value="1" required>Yes
@@ -138,7 +144,7 @@
             <input type="radio" name="Question18" value="0">No
             <br><hr>
 
-        <button type="submit" class="btn btn-outline-info" id="assessment" data-toggle="modal"
+        <button type="submit" class="btn btn-warning" id="assessment" style="color:white" data-toggle="modal"
             data-target="#centralModalWarning"> Get Assessment Results!</button>
 
         <!-- Central Modal Medium Warning -->
@@ -149,8 +155,7 @@
                 <div class="modal-content">
                     <!--Header-->
                     <div class="modal-header">
-                        <p class="heading lead">Modal Warning</p>
-
+                        <p class="headinglead">Assessment Results!</p>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" class="white-text">&times;</span>
                         </button>
@@ -159,7 +164,12 @@
                     <!--Body-->
                     <div class="modal-body">
                         <div class="text-center">
-                            <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSllTaBT7JTRXYusTfzUkQKabD9R3qsg2b7_NsRjo7vOoRuNUY" alt="">
+                        </div>
+                        
+                        <div class="text-center">
+                 
+                            
                             <div id="marks"></div>
                             <br>
                             <div id="comment"></div>
@@ -168,14 +178,19 @@
 
                     <!--Footer-->
                     <div class="modal-footer justify-content-center">
-                        <a type="button" class="btn btn-outline-warning waves-effect" data-dismiss="modal">Close</a>
+                        <a type="button" class="btn btn-warning waves-effect" data-dismiss="modal" style="color:black">Close</a>
                     </div>
                 </div>
                 <!--/.Content-->
             </div>
         </div>
         <!-- Central Modal Medium Warning-->
+    </div>
     </form>
+        </div>
+    <div class="col-md-1"></div>
+        </div>
+    </div>
 </div>
 
 
