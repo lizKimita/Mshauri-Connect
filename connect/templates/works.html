@@ -21,7 +21,6 @@
         <br>
         <p class="text-center tagline text-white">Providing victims of gender-based violence from all over Kenya with
           the opportunity to tell their stories, and even better, connect with people who can help them.</p>
-          <a class="btn btn-info btn-center" href="{% url 'specialist' %}">Talk to a Specialist</a>
       </div>
       <br><br><br>
       <h3 class="text-center">Are you at risk of an attack from your partner?</h3>
@@ -75,7 +74,7 @@
           <h5 class="card-title text-center"><b>Be Aware</b></h5>
           <p class="card-text text-center">Next time they try to victimise you, know what to look out for, and how to
             protect yourself through our awareness forum</p>
-          <p class="text-center"><a href="#" class="more">Learn</a></p>
+          <p class="text-center"><a href="{% url 'forums' %}" class="more">Learn</a></p>
         </div>
       </div>
       <div class="card">
@@ -85,7 +84,7 @@
           <h5 class="card-title text-center"><b>Connect</b></h5>
           <p class="card-text text-center">Talk to a professional of your choice right here. You don't have to worry
             about where to start anymore.</p>
-          <p class="text-center"><a href="#" class="more">Connect</a></p>
+          <p class="text-center"><a href="{% url 'specialist' %}" class="more">Connect</a></p>
         </div>
       </div>
     </div>
