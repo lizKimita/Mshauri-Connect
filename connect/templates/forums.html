@@ -54,23 +54,26 @@
 <div class="container-fluid maps" style="padding:3%">
     <h1 class="text-center"><b>All Stories</b></h1><hr>
     <h5 class="text-center"><i>Connect with other users through the experieces and get to hear and offer a listening ear!</i></h5>
-  {%for post in posts%}
-  <div class="col-md-4">
-    <div class="card">
-      <img class="card-img" src="https://images.pexels.com/photos/731753/pexels-photo-731753.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bologna">
-      <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
-        <h2 class="card-title">{{post.forum_title}}</h2>
-        <h6 class="card-subtitle mb-2">{{post.post_date}}</h6>
-        <p class="card-text">Another one from {{post.post_user}}. </p>
-        <div class="link d-flex">
-          <a href="#" class="card-link text-warning">Read More</a>
+  <div class="row">
+      {%for post in posts%}
+      <div class="col-md-4">
+        <div class="card">
+          <img class="card-img" src="https://images.pexels.com/photos/731753/pexels-photo-731753.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bologna">
+          <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+            <h2 class="card-title">{{post.forum_title}}</h2>
+            <h6 class="card-subtitle mb-2">{{post.post_date}}</h6>
+            <p class="card-text">Another one from {{post.post_user}}. </p>
+            <div class="link d-flex">
+              <a href="#" class="card-link text-warning">Read More</a>
+            </div>
+          </div>
         </div>
+    
       </div>
-    </div>
-
+    
+      {%endfor%}
   </div>
 
-  {%endfor%}
 </div>
 
 <script src="js/carousel.js"></script>
