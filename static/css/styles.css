@@ -101,7 +101,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .footer{
-  background-color: #6c757d;
+  background-color: rgba(218, 206, 193, 0.986);
   padding-top: 50px;
   padding-bottom: 80px;
 }
@@ -515,3 +515,11 @@ p.cursor::after {
   background-size: contain;
   background-position: center;
 } */
+.maps{
+  background-color: rgba(218, 206, 193, 0.986);
+}
+.repeat{
+  background-color: rgba(218, 206, 193, 0.986);
+  margin-top: 3%;
+  padding-bottom: 3%;
+}

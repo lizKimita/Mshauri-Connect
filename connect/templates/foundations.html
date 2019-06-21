@@ -40,16 +40,11 @@
           <h4 class="text-white text-center">Join the Revolution against Gender-Based Violence today.</h4>
           <h5 class=" text-muted text-white text-center">at +254714828944</h5>
         </div>
-
-
     </div>
   </div>
 </article>
-
     </div>
- 
   </div>
-
 </div><br>
 <div class="container-fluid">
   <div class="container">
@@ -96,18 +91,37 @@
                     <i class="fas fa-phone"></i> : {{foundation.contact}}
                   </div>
                   <div class="col-md-6">
-                      <p class="text-center"><a href="#" class="more">Connect</a></p>
+                      <p class="text-center"><a href="{{foundation.website_link}}" class="more">Connect</a></p>
                   </div>
                 </div>
                 </div>
               </div>
           </div>
           </div>
-
-
         {% endfor %}
     </div>
-    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=16WckAUQ-0Y_KBmwbEKDhRvQ3vZpIWE8T" width="640" height="480"></iframe>
-</div>
+  </div>
+  <div class="container-fluid maps" style="margin-top:3%; padding-top: 4%" >
+    <div class="row">
+        <div class="col-md-5" style="margin-top:12%">
+            <h2 style="text-align:center">Looking For a Specific Foundation?</h2>
+            <div style="margin-left:8%">
+                <form class="form-inline my-2 my-lg-0 ml-auto" action="{% url 'search' %}" role="search">
+                    <input class="form-control" type="search" placeholder="Search for a foundation" aria-label="Search" name="name">
+                    <button class="btn btn-outline-black btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-7">
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=16WckAUQ-0Y_KBmwbEKDhRvQ3vZpIWE8T" width="700" height="450"></iframe>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+  <br><br><br><br>
+
+
+
 {%include 'footer.html'%}
 {%endblock%}
