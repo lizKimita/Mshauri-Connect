@@ -2,9 +2,9 @@
 <div class="container-fluid">
     <div class="row">
         {% for awareness in awareness %}
-        <div class="col-md-8" style="padding:1%">
-                <div class="card bg-#E5D4ED text-dark" style="height:35ex" >
-                    <div style="margin:2%;">
+        <div class="col-md-6" style="padding:1%">
+                <div class="card bg-rgba(218, 206, 193, 0.986); text-dark" style="height:35ex" >
+                    <div style="margin:1%;">
                     <br>
                     <h5>
                         <p class="heading">{{awareness.article_title}}</p>
@@ -12,8 +12,8 @@
                     <hr>
                     <p class="card-text">{{awareness.article}}</p>
                     <p style="float:right">{{awareness.date}}</p>
-                    <div class="card-footer">
-                            <small class="text-muted">{{awareness.foundation}}</small>
+                    <div class="card-text">
+                            <strong>{{awareness.foundation}}</strong>
                     </div>  
                 </div>
             </div>
