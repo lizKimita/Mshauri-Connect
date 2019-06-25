@@ -38,7 +38,7 @@
             <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
               <h2 class="card-title">{{post.forum_title}}</h2>
               <h6 class="card-subtitle mb-2">{{post.post_date}}</h6>
-              <p class="card-text">{{post.post_user}}. </p>
+              <p class="card-text">Another one from {{post.post_user}}. </p>
               <div class="link d-flex">
                 <a href="#" class="card-link text-warning">Read More</a>
               </div>
@@ -54,28 +54,32 @@
 <div class="container-fluid maps" style="padding:3%">
     <h1 class="text-center"><b>All Stories</b></h1><hr>
     <h5 class="text-center"><i>Connect with other users through the experieces and get to hear and offer a listening ear!</i></h5>
-  {%for post in posts%}
-  <div class="col-md-4">
-    <div class="card">
-      <img class="card-img" src="https://images.pexels.com/photos/731753/pexels-photo-731753.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bologna">
-      <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
-        <h2 class="card-title">{{post.forum_title}}</h2>
-        <h6 class="card-subtitle mb-2">{{post.post_date}}</h6>
-        <p class="card-text">Another one from {{post.post_user}}. </p>
-        <div class="link d-flex">
-          <a href="#" class="card-link text-warning">Read More</a>
+  <div class="row">
+      {%for post in posts%}
+      <div class="col-md-4" style="padding:1%">
+        <div class="card">
+          <img class="card-img" src="data:image/jpeg;base64,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" alt="Bologna">
+          <div class="card-img-overlay text-black d-flex flex-column justify-content-center">
+            <h2 class="card-title">{{post.forum_title}}</h2>
+            <p class="card-text">{{post.forum_post}}. </p>
+            <h6 class="card-subtitle mb-2">{{post.post_date}}</h6>
+            <p class="card-text">{{post.post_user}}. </p>
+            <div class="link d-flex">
+              <a href="{% url 'comment' post.pk %}" class="card-link text-warning">view and comment</a>
+            </div>
+          </div>
         </div>
+    
       </div>
-    </div>
-
+    
+      {%endfor%}
   </div>
 
-  {%endfor%}
 </div>
 
 <script src="js/carousel.js"></script>
 
-<br><br><br><br>
+
 
 {%include 'footer.html'%}
 
