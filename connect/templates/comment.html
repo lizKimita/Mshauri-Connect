@@ -4,12 +4,13 @@
 {% block content %}
 {%for forum in post%}
 
-<div class="container">
-    <div class="row">
+<div class="container-fluid card" style="margin-top:1%">
+<br>
+    <div class="row" style="padding:4%">
         <div class="col-md-5">
             <h1 style="font-size: 5ex;text-decoration: underline">Question <i class="far fa-question-circle"></i></h1>
             <div>
-                <p class="heading">{{forum.forum_title}}</p>
+                <h2 class="card-title">{{forum.forum_title}}</h2>
                 <p >{{forum.forum_post}}</p>
                 <p style="float:right">By {{forum.post_user}}</p>
                 <p> <strong>{{forum.post_date}}</strong></p>
@@ -54,6 +55,8 @@
         </div>
     </div>
 </div>
+<br><br>
 
 {% endfor %}
+{%include 'footer.html'%}
 {% endblock %}
