@@ -149,9 +149,29 @@ li:hover{
   padding: 100px 50px;
 }
 .height{
-  background-color: #fc9247;
+  animation: colorchange 10s;
+  animation-iteration-count:infinite;
+  -webkit-animation: colorchange 10s;
+  -webkit-animation-iteration-count: infinite;
   height: 90%;
 }
+@keyframes colorchange
+   {
+     0%   {background: rgba(252, 146, 71, 0.8);}
+     25%  {background: rgba(37, 172, 162, 0.8);}
+     50%  {background: rgba(150, 32, 198, 0.8);}
+     75%  {background: rgba(95, 33, 203, 0.8);}
+     100% {background: rgba(235, 67, 35, 0.8);}
+   }
+
+   @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+   {
+     0%   {background: rgba(232, 117, 36, 0.8);}
+     25%  {background: rgba(37, 172, 162, 0.8);}
+     50%  {background: rgba(150, 32, 198, 0.8);}
+     75%  {background: rgba(95, 33, 203, 0.8);}
+     100% {background: rgba(235, 67, 35, 0.8);}
+   }
 
 /* trial */
 
