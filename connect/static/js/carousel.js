@@ -132,3 +132,15 @@ $('#carouselExample').on('slide.bs.carousel', function (e) {
         }
     }
 });
+
+// navbar javascripy
+$(window).scroll(function(){
+	if ($(document).scrollTop() > 50) {
+		 $("#nav").css("background-color", "#fc9247");
+}
+ else {
+	   $("#nav").css("background-color", "rgba(0,0,0, .4)");
+	    }
+		});
+
+#color tra
