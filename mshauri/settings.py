@@ -75,7 +75,6 @@ PASSWORD_REDIRECT_URL = "/"
 INSTALLED_APPS = [
     'rest_framework',
     'connect',
-    'mpesapy',
     'requests',
     'bootstrap4',
     'django.contrib.admin',

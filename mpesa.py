@@ -46,7 +46,7 @@ def lipa_na_mpesa():
       "PartyA": keys.phone_number,
       "PartyB": keys.business_shortcode,
       "PhoneNumber": keys.phone_number,
-      "CallBackURL": "https://fullstackdjango.com/lipanampesa",
+      "CallBackURL": "http://mycallbackurl.com/checkout.php",
       "AccountReference": "31643",
       "TransactionDesc": "Donate to Mshauri"
     }
@@ -54,5 +54,3 @@ def lipa_na_mpesa():
     response = requests.post(api_url, json = request, headers=headers)
 
     print (response.text)
-
-lipa_na_mpesa()
