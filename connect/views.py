@@ -15,41 +15,51 @@ from mpesa import lipa_na_mpesa
 def home(request):
     return render(request,'works.html')
 
-def tests(request):
-    tests = Assessment.objects.all()
-
-    return render(request,'tests.html',{"tests": tests})
-
-# def assessment(request):
+# def tests(request):
+#     tests = Assessment.objects.all()
 #     current_user = request.user
 #     try:
 #         pass
 #     except Exception as e:
 #         raise  Http404()
-#     yesscore = request.POST.get("yes","")
-#     noscore = request.POST.get("no","")
+#     yesscore = request.POST.get("like","")
+#     noscore = request.POST.get("dislike","") 
 
 #     if request.method=='POST':
-#         form = NewYesAssessmentForm(request.POST)
-#         danger = request.POST.get("yes","")
-
-#         if danger:
-#             yes=int(danger)
+#         form=NewYesAssessmentForm(request.POST)
+#         yess = request.POST.get("bad","")
+#         if yess:
+#             bad=int(yess)
 #             if form.is_valid:
-#                 yesscore = form.save(commit=False)
-#                 # single = Tips.objects.filter(id = vote)
+#                 yesans=form.save(commit=False)
+#                 single = Assessment.objects.filter(id = yess)
 #                 count=0
-#                 # for i in single:
-#                 count+=i.upvote
-#                 total_upvotes=count+1
-#                 Tips.objects.filter(id=vote).update(upvote=total_upvotes)
-#                 return redirect('tips')
-#     return render(request,'assessment.html')
+#                 for i in single:
+#                     count+=i.yesans
+#                 total_yes=count+1
+#                 Assessment.objects.filter(id=yess).update(yesscore=total_yes)
+#                 return redirect('tests')
+
+#     else:
+#         forms=NewYesAssessmentForm()
+
+#     return render(request,'tests.html',{"tests": tests})
+
+def tests(request):
+    current_user = request.user
+
+    return render(request,'assessment.html')
 
 def foundation(request):
     foundations = Foundation.objects.all()
 
     return render(request, 'foundations.html', {"foundations": foundations})
+
+
+def awareness(request):
+    awareness = Awareness.objects.all()
+
+    return render(request, 'awareness.html', {"awareness": awareness})
 
 def search_results(request):
     foundation= Foundation.objects.all()

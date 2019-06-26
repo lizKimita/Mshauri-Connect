@@ -41,9 +41,9 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .btn-outline-success{
-  color: black;
-  border:2px solid #ffffe0;
-  background-color: #ffffe0;
+  color: black !important;
+  border:2px solid #ffffe0 !important;
+  background-color: #ffffe0 !important;
 
 }
 
@@ -101,7 +101,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .footer{
-  background-color: #6c757d;
+  background-color: rgba(218, 206, 193, 0.986);
   padding-top: 50px;
   padding-bottom: 80px;
 }
@@ -122,6 +122,18 @@ li:hover{
   font-size: large;
 }
 
+.headinglead{
+  font-size: 200%;
+  text-align: center;
+}
+#marks{
+  color: black;
+  font-size: 140%;
+}
+#comment{
+  color: black;
+}
+
 
 .foundation{
   padding-bottom: 15px;
@@ -138,7 +150,7 @@ li:hover{
 }
 .height{
   background-color: #fc9247;
-  height: 100%;
+  height: 75%;
 }
 
 /* trial */
@@ -336,7 +348,7 @@ $transparency: 0.75;
 
 .forums {
   background-color:#fc9247;
-  height: 75%;
+  height: 50%;
 }
 
 .output {
@@ -497,4 +509,17 @@ p.cursor::after {
         visibility: visible;
     }
 
+}
+/* .repeat{
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+} */
+.maps{
+  background-color: rgba(238, 232, 225, 0.555);
+}
+.repeat{
+  background-color: rgba(218, 206, 193, 0.986);
+  margin-top: 3%;
+  padding-bottom: 3%;
 }

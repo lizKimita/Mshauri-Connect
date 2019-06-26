@@ -14,17 +14,19 @@
                     <i style="float:right" >
                     <form class="" action="" method="post">
                         {%csrf_token%}
-                        <input type="hidden" name="dislike" value="{{test.id}}">
+                        <input type="hidden" name="good" value="{{test.id}}">
                         <button type="submit" name="button" class="btn btn-outline-info">No</button>
                     </form></i>
                     <i><form class="" action="" method="post">
                         {%csrf_token%}
-                        <input type="hidden" name="like" value="{{test.id}}">
+                        <input type="hidden" name="bad" value="{{test.id}}">
                         <button type="submit" name="button" class="btn btn-outline-info">Yes</button>
-                    </form></i>           
+                    </form></i> 
+                               
             </div>
             <hr>
             {%endfor%}
+            {{test.yesscore}}
         </div>
         </div>
         <div class="col-md-1"></div>

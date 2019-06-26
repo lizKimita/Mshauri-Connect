@@ -1,0 +1,30 @@
+{%extends 'base.html'%} {% load bootstrap4 %} {% block content %} {{block.super}}
+<div class="container-fluid">
+    <div class="row" >
+        {% for awareness in awareness %}
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="padding:1%">
+                <div class="card bg-#E5D4ED text-dark">
+                    <div style="margin:2%;">
+                    <br>
+                    <h5>
+                        <p class="heading">{{awareness.article_title}}</p>
+                    </h5>
+                    <hr>
+                    <p class="card-text">{{awareness.article}}</p>
+                    
+                    <div >
+                        <small class="text-muted" style="float:right">{{awareness.date}}</small>
+                        <small class="text-muted">{{awareness.foundation}}</small>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        {% endfor %}
+    </div>
+</div>
+<br><br><br><br>
+
+{%include 'footer.html'%}
+{%endblock%}
