@@ -56,33 +56,36 @@
 
   </div>
 </div>
-<br><br><div class="container ">
+<br><br><div class="container-fluid landing">
+<br>
+<div class="container">
+  <div class="row" style="margin-top: 5%">
 
-    <div class="row" style="margin-top: 5%">
-        {% for foundation in foundations %}
-          <div class="col-md-4">
-            <div class="card-deck foundation">
-              <div class="card services">
-                <div class="serve"><img class="card-img-top rounded-circle" src="{{foundation.image.url}}" alt="Card image cap" height="70px" width="70px"></div>
-                <br>
-                <div class="card-body">
-                    <h5 class="card-title text-center"><b>{{foundation.name}}</b></h5>
-                    <h6 class="text-muted text-center">{{foundation.location}}</h6>
-                  <p class="card-text text-center">{{foundation.description}}</p><br><br>
-                <div class="row">
-                  <div class="col-md-6">
-                    <i class="fas fa-phone"></i>:{{foundation.contact}}
-                  </div>
-                  <div class="col-md-6">
-                      <p class="text-center"><a href="{{foundation.website_link}}" target="_blank" class="more">Connect</a></p>
-                  </div>
+      {% for foundation in foundations %}
+        <div class="col-md-4">
+          <div class="card-deck foundation">
+            <div class="card services">
+              <div class="serve"><img class="card-img-top rounded-circle" src="{{foundation.image.url}}" alt="Card image cap" height="70px" width="70px"></div>
+              <br>
+              <div class="card-body">
+                  <h5 class="card-title text-center"><b>{{foundation.name}}</b></h5>
+                  <h6 class="text-muted text-center">{{foundation.location}}</h6>
+                <p class="card-text text-center">{{foundation.description}}</p><br><br>
+              <div class="row">
+                <div class="col-md-6">
+                  <i class="fas fa-phone"></i>:{{foundation.contact}}
                 </div>
+                <div class="col-md-6">
+                    <p class="text-center"><a href="{{foundation.website_link}}" target="_blank" class="more">Connect</a></p>
                 </div>
               </div>
-          </div>
-          </div>
-        {% endfor %}
-    </div>
+              </div>
+            </div>
+        </div>
+        </div>
+      {% endfor %}
+  </div>
+</div><br><br>
   </div>
   <div class="container-fluid maps" style="margin-top:3%; padding-top: 4%" >
     <div class="row">
