@@ -72,7 +72,7 @@ def search_results(request):
 
     else:
         message = "no foundation by that name"
-        return render(request,'search.html',{"message":message})    
+        return render(request,'search.html',{"message":message})
 
 class FoundationList(APIView):
     def get(self,request,format=None):
@@ -181,7 +181,7 @@ def comment(request,id):
         pass
     except Exception as e:
         raise Http404()
-   
+
     return render(request, 'comment.html',{'post':post, 'current_user': current_user,  'form':form, 'comments':user_solution})
 
 
@@ -222,3 +222,17 @@ def profile(request):
         return redirect('new_profile')
 
     return render(request,'profile.html',{ 'profile':profile,'current_user':current_user,'posts':posts})
+
+
+def get_data(request):
+    print("something")
+    if request.method == 'POST':
+        phone_number = request.POST.get('phone_number')
+        amount = request.POST.get('amount')
+        message = phone_number+" is sending KES"+amount+" to you."
+        return render(request, 'data.html', {"message":message})
+
+    else:
+        print("Enter something")
+
+    return render(request, 'data.html')

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="" method="POST">
+      {% csrf_token %}
+    	<label> Phone Number </label>
+    	<input type="text" name="phone_number" value={{request.form.username}}>
+    	<label> Amount </label>
+    	<input type="amount" name="amount" value={{request.form.password}}>
+
+    	<button type="submit"> Submit </button>
+    </form>
+
+
+    {{message}}
+  </body>
+</html>

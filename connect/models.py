@@ -68,3 +68,6 @@ class Assessment(models.Model):
     yesscore = models.IntegerField(default=0)
     noscore = models.IntegerField(default=0)
     date = models.DateField(auto_now_add=True)
+
+class LNMOnline(models.Model):
+    pass

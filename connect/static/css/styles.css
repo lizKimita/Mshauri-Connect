@@ -25,6 +25,10 @@ h1,h2,h3,h4,h5,h6{
 
 }
 
+.aware{
+  height: 100%;
+}
+
 .landing{
   background-color: #fc9247;
 }
@@ -66,7 +70,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .card{
-  background: #F3F5F7;
+  background: #fff;
   border-radius: 12px;
 }
 
@@ -126,6 +130,9 @@ li:hover{
   font-size: 200%;
   text-align: center;
 }
+.heading{
+  font-size: 30px;
+}
 #marks{
   color: black;
   font-size: 140%;
@@ -149,9 +156,29 @@ li:hover{
   padding: 100px 50px;
 }
 .height{
-  background-color: #fc9247;
-  height: 75%;
+  animation: colorchange 10s;
+  animation-iteration-count:infinite;
+  -webkit-animation: colorchange 10s;
+  -webkit-animation-iteration-count: infinite;
+  height: 90%;
 }
+@keyframes colorchange
+   {
+     0%   {background: rgba(252, 146, 71, 0.8);}
+     25%  {background: rgba(37, 172, 162, 0.8);}
+     50%  {background: rgba(150, 32, 198, 0.8);}
+     75%  {background: rgba(95, 33, 203, 0.8);}
+     100% {background: rgba(235, 67, 35, 0.8);}
+   }
+
+   @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+   {
+     0%   {background: rgba(232, 117, 36, 0.8);}
+     25%  {background: rgba(37, 172, 162, 0.8);}
+     50%  {background: rgba(150, 32, 198, 0.8);}
+     75%  {background: rgba(95, 33, 203, 0.8);}
+     100% {background: rgba(235, 67, 35, 0.8);}
+   }
 
 /* trial */
 
@@ -348,7 +375,7 @@ $transparency: 0.75;
 
 .forums {
   background-color:#fc9247;
-  height: 50%;
+  height: 60%;
 }
 
 .output {
@@ -522,4 +549,12 @@ p.cursor::after {
   background-color: rgba(218, 206, 193, 0.986);
   margin-top: 3%;
   padding-bottom: 3%;
+}
+
+#nav{
+  z-index: 2;
+}
+
+.page-footer{
+  margin-bottom: -50px;
 }
