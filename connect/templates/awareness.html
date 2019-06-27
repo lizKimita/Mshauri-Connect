@@ -1,5 +1,45 @@
 {%extends 'base.html'%} {% load bootstrap4 %} {% block content %} {{block.super}}
+
+<div class="container-fluid landing">
+
+  <div class="row">
+    <div class="container-fluid">
+      <br><br><br>
+    <!-- ngoja this is a mess -->
+
+      <!-- hadi hapa -->
+      <div class="connects">
+        <i class="far fa-lightbulb rounded-circle text-white fa-4x"></i>
+      </div>
+      <br>
+      <div class="row" id="about">
+        <div class="col-md-3">
+          {%include 'carousel.html'%}
+        </div>
+        <div class="col-md-6">
+          <h1 class="text-center"><b>"Awareness is the greatest agent for change."</b></h1>
+          <div class="tagline">
+            <br>
+            <p class="text-center tagline text-white">Creating awareness on Gender-Based Violence for people all over Kenya through a strong network of anti-GBV organisations.</p>
+          </div>
+          <br><br>
+          <h3 class="text-center">Are you at risk of an attack from your partner?</h3>
+          <h5 class="text-center text-white">Find out now using our diagnostic test</h5>
+          <div class="btn-center">
+          <a  class="btn btn-info btn-center" href="{% url 'tests' %}">Danger Assessment</a>
+          </div><br><br>
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
 <div class="container-fluid">
+<h1 class="text-center"><b>In The Know</b></h1>
     <div class="row" >
         {% for awareness in awareness %}
         <div class="col-md-2"></div>
@@ -7,16 +47,19 @@
                 <div class="card bg-#E5D4ED text-dark">
                     <div style="margin:2%;">
                     <br>
-                    <h5>
-                        <p class="heading">{{awareness.article_title}}</p>
+                    <div class="row">
+                      <img src="https://www.leadershipacademy.nhs.uk/wp-content/uploads/2015/08/info-orange.png" alt=""  width="7%" height="7%">
+                      <h5>
+                          <p class="heading text-center">{{awareness.article_title}}</p>
+                    </div>
                     </h5>
                     <hr>
                     <p class="card-text">{{awareness.article}}</p>
-                    
+
                     <div >
                         <small class="text-muted" style="float:right">{{awareness.date}}</small>
                         <small class="text-muted">{{awareness.foundation}}</small>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>

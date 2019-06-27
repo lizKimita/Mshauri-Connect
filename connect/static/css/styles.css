@@ -25,6 +25,10 @@ h1,h2,h3,h4,h5,h6{
 
 }
 
+.aware{
+  height: 100%;
+}
+
 .landing{
   background-color: #fc9247;
 }
@@ -125,6 +129,9 @@ li:hover{
 .headinglead{
   font-size: 200%;
   text-align: center;
+}
+.heading{
+  font-size: 30px;
 }
 #marks{
   color: black;
@@ -368,7 +375,7 @@ $transparency: 0.75;
 
 .forums {
   background-color:#fc9247;
-  height: 50%;
+  height: 60%;
 }
 
 .output {
@@ -546,4 +553,8 @@ p.cursor::after {
 
 #nav{
   z-index: 2;
+}
+
+.page-footer{
+  margin-bottom: -50px;
 }
