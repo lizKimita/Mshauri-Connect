@@ -62,7 +62,7 @@
         {% for foundation in foundations %}
           <div class="col-md-4">
             <div class="card-deck foundation">
-              <div class="card">
+              <div class="card services">
                 <div class="serve"><img class="card-img-top rounded-circle" src="{{foundation.image.url}}" alt="Card image cap" height="70px" width="70px"></div>
                 <br>
                 <div class="card-body">
@@ -104,4 +104,5 @@
   </div>
 
 {%include 'footer.html'%}
+<script src="js/carousel.js"></script>
 {%endblock%}
