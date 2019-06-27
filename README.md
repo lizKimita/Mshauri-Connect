@@ -1,10 +1,13 @@
 # Mshauri-Connect Application
+This is an application that connects victims of domestic violence with organizations that can assist them, and provides a community where victims can share their stories, get advice and support.
+
 ## Authors
 * [Alex Omaset](https://github.com/alexomaset/)
 * [Liz Kimita](https://github.com/lizKimita/)
 * [Sauda Habib](https://github.com/saudahabib/)
 * [Dickson Nyaigoti](https://github.com/deeksonparlma/)
 * [Anthony Njuguna](https://github.com/Antavio/)
+
 ## Description
 Mshauri-Connect is an application that provides victims of gender-based violence from all over Kenya with the opportunity to tell their stories, and even better, connect with people and organizations around who can help them.
 #### Behaviour Driven Development(BDD)
@@ -18,23 +21,27 @@ Mshauri-Connect is an application that provides victims of gender-based violence
 
 ### Project Setup instructions
 Use the following commands to use this project.
-- git clone ``
+- git clone 
 - install `python 3.6`
 - Install [Postgresql](https://www.postgresql.org/download/)
 - cd Mshauri-Connect
 - Navigate to the virtual environment using `source virtual/bin/activate`
 - `atom .`  //For those using atom text editor.
 - `code .`  //For those using Visual Studio editor.
+
 ### Install dependancies
 Install dependancies that will create an environment for the app to run `pip install -r requirements.txt`
+
 ### Create the Database
-```psql
-CREATE DATABASE <preferred name>;```
-- Run `python3.6 manage.py runserver`
-- Access the application on this localhost address `http://127.0.0.1:8000`
+```
+CREATE DATABASE <preferred name>
+- Run python3.6 manage.py runserver
+- Access the application on this localhost address http://127.0.0.1:8000
+```
 ### Technologies used
 The different technologies that were used to develop this program include:
-```1. Python 3.6 
+```
+1. Python 3.6 
 2. Bootstrap
 3. HTML
 4. CSS
@@ -43,10 +50,13 @@ The different technologies that were used to develop this program include:
 7. Django Framework
 8. Firebase
 9. Django-Channels
-10.Android-Java
-11.Socket io```
+10. Android-Java
+11. Socket io
+```
+
 ### Link to live site
-Here is a link to the live site [link]
+Here is a link to the live site https://mshauri-connect.herokuapp.com
+
 ### Contact Me
 If you have any suggestions, additions or modifications on this project you can contact us via email.
 ### License  & Copyright information
